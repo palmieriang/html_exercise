@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	
+	<title></title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
+	<style type="text/css">
+		body {
+			background: lightblue;
+		}
+		table {
+			border-collapse: collapse;
+		}
+		img {
+			width: 200px;
+			height: 200px;
+		}
+		select, option {
+			background: yellow;
+		}
+	</style>
+
+</head>
+
+<body>
+	
+	<table id="tabella">
+		<tr id="list"></tr>
+	</table>
+
+	<select id="elencoImg">
+		<option value="#"></option>
+		<option value="https://upload.wikimedia.org/wikipedia/commons/f/fc/Jaguar.jpg">Black Jaguar</option>
+		<option value="https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg">Lion</option>
+		<option value="https://upload.wikimedia.org/wikipedia/commons/a/a4/Indrah_the_Sumatran_Tiger.jpg">Tiger</option>
+		<option value="https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG">Panda</option>
+		<option value="https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg">Polar Bear</option>
+
+	</select>
+
+	<script type="text/javascript">
+		
+		$('#elencoImg').attr('onchange', 'aggiungi(this)');
+		added = 0;
+
+		function aggiungi(voceScelta) {
+			added++;
+			
+			newTd = " <td id='img" + added + "'> <img src='" + voceScelta.value + "' /> <br/> </td>";
+			
+			$('#list').append(newTd);
+
+			buttonDelete = "<button style='color: red' onclick=" + '"' + "deleteX('img" + added + "')" + '">X</button>';
+			buttonLeft = "<button style='color: blue' onclick=" + '"' + "moveLeft('img" + added + "')" + '"><-</button>';
+			buttonRight = "<button style='color: blue' onclick=" + '"' + "moveRight('img" + added + "')" + '">-></button>';
+
+			$('#img'+added).css('background', 'yellow').append(buttonDelete).append(buttonLeft).append(buttonRight);
+			sortButtons();
+
+		}
+
+		function sortButtons() {
+						
+			var buttonNumber = $('td button').length;
+					
+			$('td button').each(function (i) {
+
+				if ( i==1 || i==buttonNumber-1)
+					$(this).hide();
+				else 
+					$(this).show();
+			});
+		}
+
+		function deleteX(elemento) {
+
+			$("#" + elemento).remove();
+		}
+
+		function moveLeft(elemento) {
+
+			var prevImg = $("#" + elemento).prev().find(':first-child').attr('src');
+
+			$("#" + elemento).prev().find(':first-child').attr('src', $("#" + elemento+">img").attr('src'));
+
+			$("#" + elemento+">img").attr('src',prevImg);
+		}
+
+		function moveRight(elemento) {
+
+			var nextImg = $("#" + elemento).next().find(':first-child').attr('src');
+
+			$("#" + elemento).next().find(':first-child').attr('src', $("#" + elemento+">img").attr('src'));
+
+			$("#" + elemento+">img").attr('src',nextImg);
+		} 
+
+
+	</script>
+
+</body>
+</html>
