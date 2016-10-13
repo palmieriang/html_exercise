@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Quotes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="mainBox">
+    <div class="quote-text"></div>
+    <div class="quote-author"></div>
+    <div class="buttons">
+      <a id="tweet-quote" class="button share" class="fa fa-twitter" title="Tweet this quote!" target="_blank" hidden="hidden"><i class="fa fa-twitter" style="font-size:24px;color:#87CEEB;padding-left:10px;padding-top:3px;"></i>
+      </a>
+      <a id="tumblr-quote" class="button share" title="Post this quote on tumblr!" target="_blank" hidden="hidden"><i style="font-size:20px;color:#87CEEB;padding-left:14px;padding-top:5px;" class="fa">&#xf173;</i>
+      </a>
+      <a id="new-quote" class="button" onclick="newQuote();">New quote</a>
+    </div>
+  </div>
+
+  <div class="footer">Created by <a href="http://angelopalmieri.com/" target="_blank">Angelo Palmieri</a></div>
+  
+  <script type="text/javascript">
+
+// richiesta scritta da me
+    
+    function newQuote() {
+
+      var quoteUrl = "http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?";
+
+      $.getJSON(quoteUrl, function(data) {
+
+        currentQuote = data.quoteText;
+
+        currentAuthor = data.quoteAuthor;
+        
+        $(".quote-text").text(currentQuote);
+        
+        $(".quote-author").text('- '+currentAuthor);
+        
+          if (currentAuthor === "") {
+        
+            currentAuthor = "Unknown";
+
+            $(".quote-author").append(currentAuthor);
+            
+          };
+
+        $('#tweet-quote').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
+        $('#tumblr-quote').attr('href', 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+encodeURIComponent(currentAuthor)+'&content=' + encodeURIComponent(currentQuote));
+
+      }).fail(function(e) {
+
+      $(".quote-text").text('Quotes could not be loaded');
+
+    });
+
+      $('*:hidden').show();
+
+    };
+
+    
+  </script>
+
+</body>
+
+</html>
