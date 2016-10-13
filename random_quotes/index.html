@@ -10,7 +10,7 @@
 
 <body>
   <div class="mainBox">
-    <div class="quote-text"></div>
+    <div class="quote-text"><i class="fa fa-quote-left" style="font-size:18px;"></i><span id="text"></span></div>
     <div class="quote-author"></div>
     <div class="buttons">
       <a id="tweet-quote" class="button share" class="fa fa-twitter" title="Tweet this quote!" target="_blank" hidden="hidden"><i class="fa fa-twitter" style="font-size:24px;color:#87CEEB;padding-left:10px;padding-top:3px;"></i>
@@ -27,6 +27,8 @@
 
 // richiesta scritta da me
     
+    $('.fa').hide();
+
     function newQuote() {
 
       var quoteUrl = "http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?";
@@ -37,7 +39,7 @@
 
         currentAuthor = data.quoteAuthor;
         
-        $(".quote-text").text(currentQuote);
+        $("#text").text(' '+currentQuote);
         
         $(".quote-author").text('- '+currentAuthor);
         
