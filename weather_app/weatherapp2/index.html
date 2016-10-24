@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Weather App</title>
+	<!--does not work in chrome. precise geolocation-->
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="mainbox">
+	<div id="topBox">
+		<h1>Free C<i class="wi wi-hail"></i>de Camp</h1>
+		<h2>Weather App</h2>
+	</div>
+	<div id="centralBox">
+		<p id="coord"></p>
+		<p id="city"></p>
+		<p id="temperature"></p>
+		<p id="type"></p>		
+	</div>
+	<div id="bottomBox" class="icon">
+	</div>
+	<footer>
+		<p id="footer">Created by <a href="http://angelopalmieri.com" target="_blank">Angelo Palmieri</a></p>
+	</footer>
+</div>
+<script type="text/javascript">
+	
+$(document).ready(function() {
+
+	var lat, long;
+
+	if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			
+			lat = position.coords.latitude;
+			long = position.coords.longitude;
+
+		//$('#coord').html("Latitude: " + lat.toFixed(2) + "<br>Longitude: " + long.toFixed(2));
+
+			var api = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=767a3c99a37bf1d6a04861df4fc123e3";
+
+			$.getJSON(api, function(data) {
+
+				var kTemp, cTemp, fTemp;
+
+				var tempSwap = true;
+		    
+		    	var weatherType = data.weather[0].main;
+
+		    	var location = data.name + ', ' + data.sys.country;
+
+		    	var kTemp = data.main.temp;
+
+		    	cTemp = Math.round(kTemp-273.15);
+
+		    	fTemp = Math.round((kTemp*(9/5))-459.67);
+
+		    	$('#type').text(weatherType);
+
+		    	$('#city').text(location);
+
+		    	$('#temperature').html(cTemp + ' °' + '<span id="unit">C</span>');
+
+		    	$('#temperature').click(function() {
+		    		if (tempSwap === false) {
+		    			$('#temperature').html(cTemp + ' °' + '<span id="unit">C</span>');
+		    			tempSwap = true;
+		    		} else {
+		    			$('#temperature').html(fTemp + ' °' + '<span id="unit">F</span>');
+		    			tempSwap = false;
+		    		};
+
+		    	});
+
+				if (weatherType === 'Clear') {
+					
+					newDiv = "<div class='sun'></div>";
+
+					$('#bottomBox').append(newDiv);
+
+					newDiv2 = "<div class='rays'></div>";
+
+					$('.sun').append(newDiv2);
+
+				} else if (weatherType === 'Clouds') {
+
+					newDiv = '<div class="cloud"></div>';
+
+					$('#bottomBox').append(newDiv);
+
+					$('#bottomBox').append(newDiv);
+
+				} else if (weatherType === 'Rain') {
+
+					nuovoDiv = '<div class="cloud"></div>';
+
+					nuovoDiv2 = '<div class="rain"></div>';
+
+					$('#bottomBox').append(nuovoDiv);
+
+					$('#bottomBox').append(nuovoDiv2);
+
+				} else if (weatherType === 'Snow') {
+
+					nuovoDiv = '<div class="cloud"></div>';
+
+					nuovoDiv2 = '<div class="snow"></div>';
+
+					nuovoDiv3 = '<div class="flake"></div>';
+
+					$('#bottomBox').append(nuovoDiv);
+
+					$('#bottomBox').append(nuovoDiv2);
+
+					$('.snow').append(nuovoDiv3);
+
+					$('.snow').append(nuovoDiv3);
+		
+				} else if (weatherType === 'Thunderstorm') {
+
+					nuovoDiv = '<div class="cloud"></div>';
+
+					nuovoDiv2 = '<div class="lightning"></div>';
+
+					nuovoDiv3 = '<div class="bolt"></div>';
+
+					$('#bottomBox').append(nuovoDiv);
+
+					$('#bottomBox').append(nuovoDiv2);
+		
+					$('.lightning').append(nuovoDiv3);
+
+					$('.lightning').append(nuovoDiv3);
+
+				}
+
+			});
+
+		})
+  	}
+});
+
+</script>
+</body>
+</html>
