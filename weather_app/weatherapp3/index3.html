@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Weather App</title>
+	<!--Richiesta scritta seguendo il video su youtube (più sezioni). Cambia l'immagine di sfondo-->
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
+</head>
+<body>
+<div id="mainbox">
+	<div id="topBox">
+		<h1>Free C<i class="wi wi-hail"></i>de Camp</h1>
+		<h2>Weather App</h2>
+	</div>
+	<div id="centralBox">
+		<ul>
+			<p id="temperature"></p>		
+			<li><p id="city"></p></li>
+			<li><p id="type"></p></li>
+			<li><p id="wind"></p></li>	
+		</ul>	
+	</div>
+	<div id="bottomBox" class="icon">
+	</div>
+	<footer>
+		<p id="footer">Created by <a href="http://angelopalmieri.com" target="_blank">Angelo Palmieri</a></p>
+	</footer>
+
+</div>
+<script type="text/javascript">
+	
+
+$(document).ready(function() {
+
+	var long, lat;
+
+	if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			
+			lat = position.coords.latitude;
+			long = position.coords.longitude;
+
+			//$('#coord').html("Latitude: " + lat.toFixed(2) + "<br>Longitude: " + long.toFixed(2));
+
+
+			var api = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=767a3c99a37bf1d6a04861df4fc123e3";
+  
+			$.getJSON(api, function(data) {
+
+				var kTemp, cTemp, fTemp;
+
+				var tempSwap = true;
+		    
+		    	var weatherType = data.weather[0].main;
+
+		    	var location = data.name + ', ' + data.sys.country;
+
+		    	var kTemp = data.main.temp;
+
+		    	var wind = data.wind.speed;
+
+		    	cTemp = Math.round(kTemp-273.15);
+
+		    	fTemp = Math.round((kTemp*(9/5))-459.67);
+
+		    	$('#type').text(weatherType);
+
+		    	$('#city').text(location);
+
+		    	$('#wind').html('<i class="wi wi-strong-wind"></i>  ' + wind + ' m/s');
+
+		    	$('#temperature').text(cTemp + ' °C');
+
+		    	$('#temperature').click(function() {
+		    		if (tempSwap === false) {
+		    			$('#temperature').text(cTemp + ' °C');
+		    			tempSwap = true;
+		    		} else {
+		    			$('#temperature').text(fTemp + ' °F');
+		    			tempSwap = false;
+		    		}
+		    	});
+
+		    	if (weatherType === 'Clear') {
+		    		$('body').css('background-image', 'url(http://cdn.weatheravenue.com/img/background/background.jpg)')
+		    	} else if (weatherType === 'Rain') {
+		    		$('body').css('background-image', 'url(http://cdn.pcwallart.com/images/cold-wallpaper-3.jpg)')
+		    	} else if (weatherType === 'Clouds') {
+		    		$('body').css('background-image', 'url(http://cdn.wallpapersafari.com/28/88/oBQbd2.jpg)')
+		    	}
+
+			}); 
+		});
+	}
+
+  
+});
+
+</script>
+</body>
+</html>
