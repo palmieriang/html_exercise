@@ -1,0 +1,34 @@
+body {
+	font-family: "Lucida Grande", Tahoma, Sans-Serif;
+	background-color: #092B40 !important;
+}
+.container h1 {
+	color: white;
+}
+#random {
+	color: white;
+  	padding: 1%;
+}
+#searchTerm {
+	width: 180px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+.row {
+	background-color: #E7E7E8;
+	padding: 2% 1%;
+	margin: 8px;
+	text-align: left;
+}
+div a {
+	font-size: 18px;
+	margin: 10% 0%;
+	font-weight: bold;
+}
+div p {
+	font-size: 14px;
+	color: black;
+	margin-top: 1%;
+}
