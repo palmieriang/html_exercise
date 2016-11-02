@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wikipedia Viewer</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container color">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="text-center">
+        <h1>Wikipedia Viewer</h1>
+        <a id="random" href="https://en.wikipedia.org/wiki/Special:Random" target="blank"><h6>Click here for a random article</h6></a>
+        <form id="demo-2">
+          <input id="searchTerm" type="search" placeholder="Search">
+        </form>
+        <br>
+        <div id="output"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript">
+    
+  $('#demo-2').submit(function(event) {
+    
+    event.preventDefault();
+    
+    var searchTerm = $('#searchTerm').val();
+
+   
+    var url = "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchTerm + "&format=json&callback=wikiCallback";
+    
+    $.ajax({
+      type:"GET",
+      url:url,
+      async:false,
+      dataType:"jsonp",
+      success: function(data) {
+        $('#output').html("");
+        for (var i = 0; i < data[1].length; i++) {
+         $('#output').prepend("<div class='list'><a href=" + data[3][i] + ">" + data[1][i] + "</a><p>"+ data[2][i] + "</p></div>"); 
+        }
+        
+      },
+      error: function(errorMessage) {
+        alert("Error");
+      }
+    });
+  });
+
+  </script>
+</body>
+</html>
