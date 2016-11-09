@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TwitchTV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Serif">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<div id="header" class="text-center">
+		<h1>Twitchtv Streamers</h1>
+		</a>
+	</div>
+	<div class="row">
+    	<h3>
+	      	<div class="col-md-4">
+	        	Logo:
+	      	</div>
+	      	<div class="col-md-4">
+	        	Display Name:
+	      	</div>
+	      	<div class="col-md-4">
+	        	Status:
+	      	</div>
+    	</h3> 
+    </div>
+    <div id="followerInfo"></div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    $.ajax({
+	    type: "GET",
+	    url: "https://api.twitch.tv/kraken/users/freecodecamp/follows/channels/",
+	    headers:{
+	      'Client-ID':'4k5c1ov15hla53rb2p94okgk3l0l3he'
+	    },
+    	success: function(data2) {
+        	for (var i=0; i<data2.follows.length; i++) {
+        		var displayName = data2.follows[i].channel.display_name;
+        		var logo = data2.follows[i].channel.logo;
+        		var status = data2.follows[i].channel.status;
+        		if (logo==null) {
+        			logo = "http://www.freeiconspng.com/free-images/no-image-icon-23491";
+        		}
+				$('#followerInfo').prepend("<div class='row'>" + "<div class='col-md-4'>" + "<img src='" + logo + "'>" + "</div>" + "<div class='col-md-4' style='padding-top:3%'>" + displayName + "</div>" + "<div class='col-md-4' style='padding-top:1%'>" + status + "</div>" + "</div>");
+			}
+		}
+	});
+        
+});
+	
+</script>
+
+</body>
+</html>
