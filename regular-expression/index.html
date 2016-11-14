@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regular Expression</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="text-center">
+
+	<h1>Regular Expression</h1>
+
+	<p>
+		A regular expression is a sequence of characters that forms a search pattern.<br/> 
+		With this example, I want to retrieve all the numbers from a string.  
+	</p>
+
+	<input type="text" id="textBox" style="width:250px"/>
+	<br/><br/>
+
+	<input type="button" value="Process String" onclick="processString()" style="width:250px"/>
+	<br/><br/>
+
+	<textarea id="textArea" rows="4" cols="30"></textarea>
+
+</div>
+
+<script type="text/javascript">
+	
+	function processString() {
+		
+		document.getElementById("textArea").value = "";
+
+		var inputString = document.getElementById("textBox").value;
+
+		var result = inputString.match(/\d+/g);
+
+		if(result != null) {
+
+			for (var i = 0; i < result.length; i++) {
+				document.getElementById("textArea").value += result[i] + "\r\n";
+			}
+		}
+	}
+
+</script>
+
+</body>
+</html>
