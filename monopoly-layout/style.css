@@ -43,7 +43,7 @@ div {
 .left {
   flex-grow: 2;
   /*  background-color: #97a2a1;*/
-  height: 100%;
+/*  height: calc(100% - 1px);*/
   position: relative;
   border-right: 1px solid black;
 }
@@ -51,7 +51,7 @@ div {
 .right {
   flex-grow: 2;
   /*  background-color: #909090;*/
-  height: 100%;
+/*  height: calc(100% - 1px);*/
   position: relative;
   border-left: 1px solid black;
 }
@@ -67,8 +67,12 @@ div {
 }
 
 .box-side {
-    height: 11.16%;
-    border-bottom: 1px solid black;
+  height: 11.16%;
+  border-bottom: 1px solid black;
+}
+
+.side-last {
+  border-bottom: 0;
 }
 
 .box-corner {
