@@ -1,12 +1,11 @@
-
 div {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 .mainSquare {
-	position: relative;
-	background-color: #cde6d0;
-	width: 868px;
-	margin: auto;
+  background-color: #cde6d0;
+  width: 90%;
+  margin: auto;
+  position: relative;
 }
 
 .mainSquare:after {
@@ -15,65 +14,68 @@ div {
   padding-bottom: 100%;
 }
 
-.content {
-  position: absolute;
-  width: 868px;
-  height: 100%;
-}
-
 .top {
-    height: 130px;
-    width: 868px;
-    border: 2px solid black;
-    position: absolute;
-    top: 0;
+  display: flex;
+  height: 16%;
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid black;
 }
 
 .bottom {
-    height: 130px;
-    width: 868px;
-    border: 2px solid black;
-    position: absolute;
-    bottom: 0;
+  display: flex;
+  height: 16%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid black;
+}
+
+.center {
+  display: flex;
+  height: 68%;
+  position: absolute;
+  width: 100%;
+  /*  background-color: #463675;*/
+  top: 16%;
 }
 
 .left {
-    height: 135px;
-    width: 615px;
-    border: 2px solid black;
-    position: absolute;
-    transform: rotate(90deg);
-    top: 366px;
-    left: -239px;
+  flex-grow: 2;
+  /*  background-color: #97a2a1;*/
+  height: 100%;
+  position: relative;
+  border-right: 1px solid black;
 }
 
 .right {
-    height: 132px;
-    width: 612px;
-    border: 2px solid black;
-    position: absolute;
-    transform: rotate(90deg);
-    top: 351px;
-    right: -240px;
-    padding-left: 0;
+  flex-grow: 2;
+  /*  background-color: #909090;*/
+  height: 100%;
+  position: relative;
+  border-left: 1px solid black;
 }
 
-.square {
-    width: 66.6px;
-    border: 2px solid black;
-    height: 100%;
-    float: left;
+.bigSquare {
+  flex-grow: 9;
 }
 
-.square.border {
-    width: 132px;
+.box {
+  /*  background-color: #756e6e;*/
+  flex-grow: 1;
+  border-right: 1px solid black;
 }
 
-.left .square {
-    width: 11.1%;
-    height: 133px;
+.box-side {
+    height: 11.16%;
+    border-bottom: 1px solid black;
 }
 
-.right .square {
-    width: 11.1%;
+.box-corner {
+/*  background-color: #78789e;*/
+  flex-grow: 2;
+}
+
+div.box-corner:nth-child(1) {
+  border-right: 1px solid black;
 }
