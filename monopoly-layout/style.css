@@ -155,3 +155,26 @@ div.box-corner:nth-child(1) {
   top: 1px;
 }
 
+.first-line {
+  position: absolute;
+  top: 34%;
+  font-size: 6px;
+  font-weight: 600;
+  text-align: center;
+  left: 0;
+  right: 0;
+  line-height: 7px;
+}
+
+.first-line-left {
+  position: absolute;
+  right: 20%;
+  font-size: 6px;
+  font-weight: 600;
+  text-align: center;
+  top: 40%;
+}
+
+.rotation1 {
+  transform: rotate(90deg);
+}
