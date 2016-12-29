@@ -42,14 +42,12 @@
 
 		$("a").on("click", function() {
 			if (this.id === "deleteAll") {
-				inputs = [	];
+				inputs = [""];
 				update(); 
+				document.getElementById("steps").innerHTML = "0";
 			} else if (this.id === "backOne") {
-				if (inputs.length > 1) {
-					inputs.pop();
-					update();
-				}
-				
+				inputs.pop();
+				update();				
 			} else if (this.id === "total") {
 				getTotal();
 			} else {
