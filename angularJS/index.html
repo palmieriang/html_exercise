@@ -316,7 +316,6 @@
 				</tbody>
 			</table>
 		</div>
-
 <!-- Lesson 13 -->
 		<div class="example" ng-controller="myController14">
 			<table>
@@ -332,6 +331,105 @@
 						<td>{{ employee.name }}</td>
 						<td>{{ employee.gender | gender }}</td>
 						<td>{{ employee.salary }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+<!-- Lesson 14 -->
+		<div class="example" ng-controller="myController15">
+			<input type="checkbox" name="" ng-model="hideSalary">Hide salary
+<!--		at beginning tha variable hideSalary will be undefined, for this reason we will see the salary (ng-hide = false) -->
+			<br />
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Gender</th>
+						<th>City</th>
+						<th ng-hide="hideSalary">Salary</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{ employee.name }}</td>
+						<td>{{ employee.gender }}</td>
+						<td>{{ employee.city}}</td>
+						<td ng-hide="hideSalary">{{ employee.salary }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="example" ng-controller="myController15">
+			<input type="checkbox" name="" ng-model="hideSalary">Hide salary
+			<br />
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Gender</th>
+						<th>City</th>
+						<th ng-show="!hideSalary">Salary</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{ employee.name }}</td>
+						<td>{{ employee.gender }}</td>
+						<td>{{ employee.city}}</td>
+						<td ng-hide="hideSalary">{{ employee.salary }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="example" ng-controller="myController15">
+			<input type="checkbox" ng-model="hideSalary">Hide salary
+<!-- 		at beginning tha variable hidesalary will not be available on the $scope object (undefined) it means false. ng-hide=false, the hide element will be visible. ng-show=false the element will not be visible. -->
+			<br />
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Gender</th>
+						<th>City</th>
+						<th ng-hide="hideSalary">Salary</th>
+						<th ng-show="hideSalary">Salary</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{ employee.name }}</td>
+						<td>{{ employee.gender }}</td>
+						<td>{{ employee.city}}</td>
+						<td ng-hide="hideSalary">{{ employee.salary }}</td>
+						<td ng-show="hideSalary">####</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+<!-- Lesson 15 -->
+		<div class="example" ng-init='employees = [
+					{ name: "Ben", gender: "Male", city: "London"},
+					{ name: "Sara", gender: "Female", city: "Chennai"},
+					{ name: "Mark", gender: "Male", city: "London"},
+					{ name: "Pam", gender: "Female", city: "Chennai"},
+					{ name: "Todd", gender: "Male", city: "London"},
+				]'>
+<!-- 	ng-init allows you to evaluate an expression in the current scope. In real world application is used a controller instead of ng-init -->
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Gender</th>
+						<th>City</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{ employee.name }}</td>
+						<td>{{ employee.gender }}</td>
+						<td>{{ employee.city }}</td>
 					</tr>
 				</tbody>
 			</table>
