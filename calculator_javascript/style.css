@@ -17,8 +17,10 @@ h1 {
   margin-right: auto;
   margin-top: 20px;
   padding-top: 20px;
+  padding-right: 31px;
   border: 2px solid grey;
   overflow: hidden;
+  text-align: right;
 }
 
 #calculator {

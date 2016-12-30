@@ -47,7 +47,11 @@
 				document.getElementById("steps").innerHTML = "0";
 			} else if (this.id === "backOne") {
 				inputs.pop();
-				update();				
+				if (inputs.length == 1 || inputs.length == 0) {
+					document.getElementById("steps").innerHTML = "0";
+				} else {
+					update();				
+				}
 			} else if (this.id === "total") {
 				getTotal();
 			} else {
