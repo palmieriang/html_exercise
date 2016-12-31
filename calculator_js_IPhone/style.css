@@ -1,0 +1,90 @@
+body {
+	background-color: black;
+    font-family: Helvetica, Sans-Serif;
+    font-weight: 200;
+}
+.phone {
+	width: 230px;
+	height: 440.9px;
+	background-color: white;
+	margin-top: 8%;
+	margin-left: auto;
+	margin-right: auto;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+
+.display {
+	background-color: black;
+	width: 200px;
+	height: 340px;
+	margin-left: auto;
+	margin-right: auto;
+	border-top: 20px;
+	top: 40px;
+	position: relative;
+}
+
+.result {
+	background-color: black;
+	color: white;
+	text-align: right;
+	width: 100%;
+	/* height: 100%; */
+	border: none;
+	font-size: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 10px;
+	top: 30px;
+	position: absolute;
+}
+
+.resultBox {height: 90px;}
+
+.row {
+	padding: 0;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.col-xs-3 {
+	padding: 0;
+	width: 25%;
+}
+
+.col-xs-6 {
+	padding: 0;
+	width: 50%;
+}
+
+.button {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #666666;
+	font-size: 18px;
+	background-color: #F0F8FF;
+	outline: 0;
+}
+
+.button:active { 
+    background-color: #DCDCDC;
+}
+
+.btn0 {
+	width: 100px;
+	height: 50px;
+	text-align: left;
+	padding-left: 19px;
+}
+
+.darkgrey {
+	background-color: #DCDCDC;
+}
+
+.orange {
+	background-color: orange;
+	color: white;
+}
