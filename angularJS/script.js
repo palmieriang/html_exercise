@@ -304,9 +304,12 @@ myApp.controller("myController16", function($scope) {
 	];
 
 	$scope.employees = employees;
-	// $scope.employeeView = "employeeTable.html"; se aggiungo questo, nella pagina html, dove richiamo 
+	
+	$scope.employeeView = "employeeTable.html";
+	// se aggiungo questo, nella pagina html, dove richiamo 
 	// la tabella devo rimuovere le virgolette singole: ng-include="'employeeTable.html'" diventa 
-	// ng-include="employeeTable.html" e funziona ugualmente.
+	// ng-include="employeeView" e funziona ugualmente.
+	// quindi se uso una proprietà in $scope uso solo " ", se voglio usare un nome del file uso "' '"
 });
 
 

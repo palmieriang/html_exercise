@@ -435,8 +435,15 @@
 			</table>
 		</div>
 <!-- Lesson 16 -->
+<!-- it works on Firefox but it doesn't work on Chrome -->
 		<div class="example" ng-controller="myController16">
-			<div ng-include="'employeeTable.html'"></div>
+			Select view:
+			<select ng-model="employeeView">
+				<option value="employeeTable.html">Table</option>
+				<option value="employeeList.html">List</option>
+			</select>
+			<br />
+			<div ng-include="employeeView"></div>
 		</div>
 	</div>
 
