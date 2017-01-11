@@ -1,0 +1,113 @@
+body {
+	background-color: rgb(35, 35, 35);
+	font-family: Helvetica, Sans-Serif;
+	font-weight: 200;
+}
+.phone {
+	width: 300px;
+	height: 618px;
+	background-color: #b1b2bb;
+	margin-top: 8%;
+	margin-left: auto;
+	margin-right: auto;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
+	border-bottom-left-radius: 35px;
+	border-bottom-right-radius: 35px;
+	padding: 0px;
+	box-shadow: 0px 0px 2px 3px #7a7b82;
+	position: relative;
+}
+
+.frame {
+	height: 100%;
+	background: #090908;
+	position: relative;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
+	border-bottom-left-radius: 35px;
+	border-bottom-right-radius: 35px;
+	overflow: hidden;
+	box-shadow: 0px 0px 1px 1px #222122;
+}
+
+.topPart {
+	height: 81px;
+	background: #080806;
+	position: relative;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.camera {
+	height: 10px;
+	width: 10px;
+	background: #172537;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	border: 3px solid #1f201c;
+	box-shadow: 0px 0px 1px 3px #242422;
+}
+
+.speaker {
+	height: 5px;
+	width: 60px;
+	background: #3d3b3d;
+	position: relative;
+	border-radius: 10px;
+	margin: 0px 20px;
+	box-shadow: 0px 0px 2px 1px #393938;
+}
+
+.screen {
+	background: #212222;
+	height: 452px;
+	width: 87%;
+	margin: auto;
+	position: relative;
+}
+
+.homeButton {
+	height: 48px;
+	width: 48px;
+	/* background: rgba(29, 29, 29, 0.28); */
+	position: relative;
+	margin: auto;
+	border-radius: 50%;
+	box-shadow: 1px 0px 5px 0px #585b64;
+}
+
+.button {
+	height: 43px;
+	width: 3px;
+	background: #74757b;
+	position: absolute;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	box-shadow: -1px 0px 1px 0px #babbbe;
+}
+
+.firstButton {
+	top: 86px;
+	left: -5px;
+	height: 25px;
+	width: 3px;
+	background: #74757b;
+	position: absolute;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	box-shadow: -1px 0px 1px 0px #babbbe;
+}
+
+.secondButton {
+	top: 140px;
+	left: -5px;
+}
+
+.thirdButton {
+	top: 195px;
+	left: -5px;
+}
