@@ -8,59 +8,67 @@
 </head>
 <body>
 
-<div class="phone">
-	<div class="display">
+	<div class="phone">
 
-		<form name="calcForm">
-				
-			<div class="row">
-				
-				<div class="resultBox"><input class="result" type="text" name="txt1"></div>
-				
-				<div class="col-xs-3"><input class="button darkgrey" type="button" name="AC" value="AC" onclick=""></div>
-				<div class="col-xs-3"><input class="button darkgrey" type="button" name="+/-" value="+/-" onclick=""></div>
-				<div class="col-xs-3"><input class="button darkgrey" type="button" name="percentbtn" value="%" onclick="displayNum(percentbtn.value)"></div>
-				<div class="col-xs-3"><input class="button orange" type="button" name="divbtn" value="/" onclick="displayNum(divbtn.value)"></div>
+		<div class="firstButton"></div>
+		<div class="button secondButton"></div>
+		<div class="button thirdButton"></div>
 
-				<div class="col-xs-3"><input class="button" type="button" name="btn7" value="7" onclick="displayNum(btn7.value)"></div>
-				<div class="col-xs-3"><input class="button" type="button" name="btn8" value="8" onclick="displayNum(btn8.value)"></div>
-				<div class="col-xs-3"><input class="button" type="button" name="btn9" value="9" onclick="displayNum(btn9.value)"></div>
-				<div class="col-xs-3"><input class="button orange" type="button" name="perbtn" value="*" onclick="displayNum(perbtn.value)"></div>
+		<div class="frame">
 
-				<div class="col-xs-3"><input class="button" type="button" name="btn4" value="4" onclick="displayNum(btn4.value)"></div>
-				<div class="col-xs-3"><input class="button" type="button" name="btn5" value="5" onclick="displayNum(btn5.value)"></div>
-				<div class="col-xs-3"><input class="button" type="button" name="btn6" value="6" onclick="displayNum(btn6.value)"></div>
-				<div class="col-xs-3"><input class="button orange" type="button" name="subbtn" value="-" onclick="displayNum(subbtn.value)"></div>
+			<div class="topPart">
+				<div class="camera"></div>
+				<div class="speaker"></div>
+			</div>
 
-				<div class="col-xs-3"><input class="button" type="button" name="btn1" value="1" onclick="displayNum(btn1.value)"></div>
-				<div class="col-xs-3"><input class="button" type="button" name="btn2" value="2" onclick="displayNum(btn2.value)"></div>
-				<div class="col-xs-3"><input class="button" type="button" name="btn3" value="3" onclick="displayNum(btn3.value)"></div>
-				<div class="col-xs-3"><input class="button orange" type="button" name="addbtn" value="+" onclick="displayNum(addbtn.value)"></div>
+			<div class="screen">
 
-				<div class="col-xs-6"><input class="btn0 button" type="button" name="btn0" value="0" onclick="displayNum(btn0.value)"></div>
-				<div class="col-xs-3"><input class="button" type="button" name="dotbtn" value="." onclick="displayNum(dotbtn.value)"></div>
-				<div class="col-xs-3"><input class="button orange" type="button" name="eqbtn" value="=" onclick="txt1.value=eval(txt1.value)"></div>
+				<div class="info"></div>
+
+				<div class="resultBox" id="calcOutput">
+					<span id="steps">0</span>
+				</div>
+
+				<div class="calcButtons" id="calculator">
+
+					<button class="calcButton darkgrey" id="deleteAll">AC</button>
+					<button class="calcButton darkgrey" id="backOne">CE</button>
+					<button class="calcButton darkgrey" id="">%</button>
+					<button class="calcButton orange" id="/">÷</button>
+
+					<button class="calcButton lightgrey" id="7">7</button>
+					<button class="calcButton lightgrey" id="8">8</button>
+					<button class="calcButton lightgrey" id="9">9</button>
+					<button class="calcButton orange" id="*">x</button>
+
+					<button class="calcButton lightgrey" id="4">4</button>
+					<button class="calcButton lightgrey" id="5">5</button>
+					<button class="calcButton lightgrey" id="6">6</button>
+					<button class="calcButton orange" id="-">-</button>
+
+					<button class="calcButton lightgrey" id="1">1</button>
+					<button class="calcButton lightgrey" id="2">2</button>
+					<button class="calcButton lightgrey" id="3">3</button>
+					<button class="calcButton orange" id="/">+</button>
+
+					<button class="calcButton button0 lightgrey" id="0">0</button>
+					<button class="calcButton lightgrey" id=".">,</button>
+					<button class="calcButton orange" id="total">=</button>
+
+				</div>
 
 			</div>
-			
-		</form>
+
+			<div class="topPart">
+				<div class="homeButton"></div>
+			</div>
+		
+		</div>
 
 	</div>
 
-</div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-
-	function displayNum(n1){
-		calcForm.txt1.value=calcForm.txt1.value+n1;
-	}
-	
-	$(document).ready(function(){
-	});
-
-</script>
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="calculator.js"></script>
 
 </body>
 </html>
