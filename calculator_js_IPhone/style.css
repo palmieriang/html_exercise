@@ -181,6 +181,10 @@ body {
 	overflow: hidden;
 }
 
+.subSymbol {
+	letter-spacing: -4px;
+}
+
 .fa-rotate-45 {
     transform: rotate(45deg);
 }
