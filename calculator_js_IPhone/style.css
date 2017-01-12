@@ -137,11 +137,19 @@ body {
 	letter-spacing: 1px;
 }
 
-.signal {flex-grow: 1;}
+.signal {
+	flex-grow: 1;
+}
 
-.time {flex-grow: 1;text-align: right;}
+.time {
+	flex-grow: 1;
+	text-align: right;
+}
 
-.battery {flex-grow: 1;text-align: right;}
+.battery {
+	flex-grow: 1;
+	text-align: right;
+}
 
 .resultBox {
 	height: 28%;
@@ -205,4 +213,12 @@ body {
     transform: rotate(45deg);
 }
 
+.calcButton.lightgrey:active {
+	background: #DCDCDC;
+}
+
+.calcButton.orange:active {
+	border: 1px solid black;
+	background: #cc8400;
+}
 
