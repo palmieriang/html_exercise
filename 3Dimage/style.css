@@ -57,29 +57,38 @@ img {
 	 perspective-origin: 50% 100px;
 }
 
-.cube {
-	position: relative;
-	width: 200px;
-	transform-style: preserve-3d;
-	left: 500px;
-	transform: rotateX(35deg) rotateY(24deg) rotateZ(-25deg) translateX(0px) translateY(0px);
-}
-
 .cube div {
 	position: absolute;
 	background: lightgray;
 	border: 1px solid black;
 }
 
+.cube1 {
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+	left: 500px;
+	transform: rotateX(54deg) rotateY(5deg) rotateZ(-28deg) translateX(0px) translateY(0px);
+	z-index: 1;
+}
+
+.cube2 {
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+	left: 500px;
+	transform: rotateX(-36deg) rotateY(25deg) rotateZ(92deg) translateX(378px) translateY(-129px);
+}
+
 .left {
-	transform: rotateY(270deg) translateX(-102px);
+	transform: rotateY(270deg) translateX(-107px);
 	transform-origin: center left;
 	width: 198px;
 	height: 198px;
 }
 
 .bottom {
-	transform: rotateX(90deg) translateX(3px) translateY(98px);
+	transform: rotateX(90deg) translateX(6px) translateY(90px);
 	transform-origin: bottom center;
 	width: 53px;
 	height: 200px;
