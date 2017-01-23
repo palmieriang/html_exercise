@@ -1,0 +1,91 @@
+body {
+	background: grey;
+}
+
+img {
+	width: 300px;
+	height: 300px;
+}
+
+.container {
+	position: relative;
+	left: 500px;
+}
+
+.panel {
+	position: absolute;
+	background: black;
+}
+
+.panel1 {
+	width: 100px;
+	height: 300px;
+	transform: rotateX(50deg) rotateY(33deg) rotateZ(-36deg);
+}
+
+.panel2 {
+	width: 100px;
+	height: 366px;
+	transform: rotateX(0deg) rotateY(59deg) rotateZ(-52deg) translateX(-76px) translateY(-75px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Here starts the cube*/
+
+.wrap {
+	 perspective: 10000px;
+	 perspective-origin: 50% 100px;
+}
+
+.cube {
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+	left: 500px;
+	transform: rotateX(35deg) rotateY(24deg) rotateZ(-25deg) translateX(0px) translateY(0px);
+}
+
+.cube div {
+	position: absolute;
+	background: lightgray;
+	border: 1px solid black;
+}
+
+.left {
+	transform: rotateY(270deg) translateX(-102px);
+	transform-origin: center left;
+	width: 198px;
+	height: 198px;
+}
+
+.bottom {
+	transform: rotateX(90deg) translateX(3px) translateY(98px);
+	transform-origin: bottom center;
+	width: 53px;
+	height: 200px;
+}
+.front {
+	transform: translateX(1px) translateZ(102px);
+	width: 53px;
+	height: 200px;
+}
