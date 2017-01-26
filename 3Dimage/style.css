@@ -1,5 +1,5 @@
 body {
-	background: grey;
+	background: lightgrey;
 }
 
 img {
@@ -8,93 +8,77 @@ img {
 }
 
 .container {
+	perspective: 10000px;
+}
+
+.cube {
+	transform-style: preserve-3d;
+	height: 150px;
+	width: 100px;
 	position: relative;
-	left: 500px;
+	margin: initial;
+	margin: 50px auto;
 }
 
-.panel {
-	position: absolute;
-	background: black;
+.cube1 {
+	transform: rotateX(-48deg) rotateY(25deg) rotateZ(21deg);
 }
 
-.panel1 {
-	width: 100px;
-	height: 300px;
-	transform: rotateX(50deg) rotateY(33deg) rotateZ(-36deg);
+.cube2 {
+	transform: rotateX(-130deg) rotateY(-18deg) rotateZ(-63deg) translateX(-332px) translateY(34px) translateZ(213px);
 }
 
-.panel2 {
-	width: 100px;
-	height: 366px;
-	transform: rotateX(0deg) rotateY(59deg) rotateZ(-52deg) translateX(-76px) translateY(-75px);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Here starts the cube*/
-
-.wrap {
-	 perspective: 10000px;
-	 perspective-origin: 50% 100px;
+.cube3 {
+	transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);	
 }
 
 .cube div {
 	position: absolute;
-	background: lightgray;
-	border: 1px solid black;
+	border: 6px solid white;
+	/* opacity: 0.95; */
+	/*	width: 100px;
+	height: 100px;*/
+	background: black;
 }
 
-.cube1 {
-	position: relative;
-	width: 200px;
-	transform-style: preserve-3d;
-	left: 500px;
-	transform: rotateX(54deg) rotateY(5deg) rotateZ(-28deg) translateX(0px) translateY(0px);
-	z-index: 1;
+.front {
+	width: 65px;
+	height: 180px;
+	background: lightblue;
+	transform: translateZ(150px);
 }
 
-.cube2 {
-	position: relative;
-	width: 200px;
-	transform-style: preserve-3d;
-	left: 500px;
-	transform: rotateX(-36deg) rotateY(25deg) rotateZ(92deg) translateX(378px) translateY(-129px);
+.back {
+	width: 65px;
+	height: 180px;
+	transform: translateZ(-150px);
+	background: darkgoldenrod;
 }
 
-.left {
-	transform: rotateY(270deg) translateX(-107px);
-	transform-origin: center left;
-	width: 198px;
-	height: 198px;
+.top {
+	width: 65px;
+	height: 290px;
+	background: blue;
+	transform: rotateX(90deg) translateZ(150px);
 }
 
 .bottom {
-	transform: rotateX(90deg) translateX(6px) translateY(90px);
-	transform-origin: bottom center;
-	width: 53px;
-	height: 200px;
+	width: 65px;
+	height: 290px;
+	background: lightgreen;
+	transform: rotateX(90deg) translateZ(-40px);
 }
-.front {
-	transform: translateX(1px) translateZ(102px);
-	width: 53px;
-	height: 200px;
+
+.left {
+	width: 290px;
+	height: 180px;
+	background: pink;
+	transform: rotateY(90deg) translateZ(-150px);
 }
+
+.right {
+	width: 290px;
+	height: 180px;
+	background: green;
+	transform: rotateY(90deg) translateZ(-74px);
+}	
