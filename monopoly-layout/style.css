@@ -4,7 +4,7 @@ div {
 }
 
 .responsive {
-    background: lightgrey;
+    background: #cde6d0;
     width: 80vw;
     height: 80vw;
     margin: 10px auto;
@@ -94,7 +94,7 @@ div {
 
 .firstLine {
 	position: absolute;
-	font-size: 5px;
+	font-size: 6px;
 	font-weight: 400;
 	line-height: 7px;
 	text-align: center;
@@ -103,21 +103,20 @@ div {
 .firstLine-top {
 	left: 1px;
 	right: 1px;
-	bottom: 26%;
+	bottom: 30%;
 	height: 10%;
 }
 
 .firstLine-left {
-	top: 1px;
-	bottom: 1px;
-	right: 27%;
-	width: 10%;
+	top: 0px;
+	bottom: 0px;
+	right: 42%;
 }
 
 .firstLine-right {
 	top: 0;
 	bottom: 0;
-	left: 40%;
+	left: 42%;
 }
 
 .firstLine-bottom {
