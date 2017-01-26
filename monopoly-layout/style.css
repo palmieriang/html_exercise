@@ -219,6 +219,14 @@ div {
 }
 
 .card-orange {
-	background: linear-gradient(#f57420, #f99120);
+	background: linear-gradient(#f99120, #f57420);
 	transform: rotateZ(-45deg) translateX(-13%) translateY(610%);
+}
+
+.card-orange-inside {
+    background: linear-gradient(#f57420, #f99120);
+    width: 94%;
+    height: 94%;
+    margin: 0.2vw auto;
+    position: relative;
 }
