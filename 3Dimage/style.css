@@ -1,5 +1,5 @@
 body {
-	background: lightgrey;
+	background: white;
 }
 
 img {
@@ -44,7 +44,6 @@ img {
 .front {
 	width: 65px;
 	height: 180px;
-	background: lightblue;
 	transform: translateZ(150px);
 }
 
@@ -52,13 +51,11 @@ img {
 	width: 65px;
 	height: 180px;
 	transform: translateZ(-150px);
-	background: darkgoldenrod;
 }
 
 .top {
 	width: 65px;
 	height: 290px;
-	background: blue;
 	transform: rotateX(90deg) translateZ(150px);
 }
 
@@ -72,13 +69,11 @@ img {
 .left {
 	width: 290px;
 	height: 180px;
-	background: pink;
 	transform: rotateY(90deg) translateZ(-150px);
 }
 
 .right {
 	width: 290px;
 	height: 180px;
-	background: green;
 	transform: rotateY(90deg) translateZ(-74px);
 }	
