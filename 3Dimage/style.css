@@ -29,7 +29,7 @@ img {
 }
 
 .cube3 {
-	transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);	
+	transform: rotateX(-10deg) rotateY(-58deg) rotateZ(122deg) translateX(-159px) translateY(73px) translateZ(-8px);
 }
 
 .cube div {
