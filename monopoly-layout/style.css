@@ -37,6 +37,7 @@ div {
 	outline: 1px solid black;
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
 .square9 {
@@ -214,7 +215,7 @@ div {
     background: linear-gradient(#a3dff9, #4ccaf4);
     width: 94%;
     height: 94%;
-    margin: 0.2vw auto;
+    margin: 0.3vw auto;
     position: relative;
 }
 
@@ -227,6 +228,56 @@ div {
     background: linear-gradient(#f57420, #f99120);
     width: 94%;
     height: 94%;
-    margin: 0.2vw auto;
+    margin: 0.3vw auto;
     position: relative;
+}
+
+.corner {
+	position: absolute;
+	text-align: center;
+	line-height: 8vw;
+	font-size: 1.2vw;
+	font-weight: 500;
+}
+
+.corner1 {
+    transform: rotateZ(135deg) translateX(-37px) translateY(-26px);
+}
+
+.corner2 {
+    transform: rotateZ(-135deg) translateX(-19px) translateY(33px);
+}
+
+.corner3 {
+    transform: rotateZ(-45deg) translateX(-10px) translateY(14px);
+    line-height: 1.4vw;
+    font-size: 1vw;
+}
+
+.corner4 {
+    transform: rotateZ(45deg) translateX(-9%) translateY(-31%);
+    line-height: 7vw;
+}
+
+.squareCorner {
+	height: 65%;
+	width: 65%;
+	border: 2px solid black;
+	right: -1px;
+	top: -1px;
+	position: absolute;
+}
+
+.corner4-left {
+	position: absolute;
+	transform: rotateZ(90deg) translateX(80%) translateY(-36%);
+	font-size: 1.2vw;
+	font-weight: 500;
+}
+
+.corner4-bottom {
+	position: absolute;
+	transform: translateX(112%) translateY(690%);
+	font-size: 1.2vw;
+	font-weight: 500;
 }
