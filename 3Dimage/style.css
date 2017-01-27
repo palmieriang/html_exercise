@@ -9,6 +9,7 @@ img {
 
 .container {
 	perspective: 10000px;
+	margin: 150px auto;
 }
 
 .cube {
@@ -76,4 +77,10 @@ img {
 	width: 290px;
 	height: 180px;
 	transform: rotateY(90deg) translateZ(-74px);
-}	
+}
+
+.cube3 .left {
+	-webkit-clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 34% 46%, 60% 45%, 88% 94%, 99% 94%, 100% 0%);
+	clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 34% 46%, 60% 45%, 89% 96%, 99% 96%, 99% 0%);
+}
+
