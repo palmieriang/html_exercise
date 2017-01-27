@@ -12,6 +12,8 @@ div {
 
 .mainSquare {
 	height: 100%;
+	outline: 1px dashed #c2dec5;
+	outline-offset: -13px;
 }
 
 .row {
@@ -283,7 +285,7 @@ div {
 
 .corner4-bottom {
 	position: absolute;
-	transform: translateX(112%) translateY(690%);
+	transform: translateX(112%) translateY(720%);
 	font-size: 1.2vw;
 	font-weight: 500;
 }
