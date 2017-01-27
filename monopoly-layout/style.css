@@ -186,18 +186,24 @@ div {
   transform: rotate(-90deg);
 }
 
-.logo {
+.logoBox {
 	width: 46%;
 	background: #ed1b24;
 	position: absolute;
 	transform: rotateZ(-45deg) translateX(-27%) translateY(237%);
 	border: 3px solid black;
 	text-align: center;
+	box-shadow: inset 0px 2px 12px 0px white;
+}
+
+.logoName {
 	font-size: 7.1vw;
 	color: white;
 	font-family: futura;
-	text-shadow: -3px 3px 0px black;
-	box-shadow: inset 0px 2px 12px 0px white;
+	text-shadow: -4px 3px 0px black;
+	-webkit-text-fill-color: white; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: #cfc2c3;
 }
 
 .card-box {
@@ -241,15 +247,15 @@ div {
 }
 
 .corner1 {
-    transform: rotateZ(135deg) translateX(-37px) translateY(-26px);
+    transform: rotateZ(135deg) translateX(-66%) translateY(-15%);
 }
 
 .corner2 {
-    transform: rotateZ(-135deg) translateX(-19px) translateY(33px);
+    transform: rotateZ(-135deg) translateX(-48%) translateY(18%);
 }
 
 .corner3 {
-    transform: rotateZ(-45deg) translateX(-10px) translateY(14px);
+    transform: rotateZ(-45deg) translateX(-14%) translateY(26%);
     line-height: 1.4vw;
     font-size: 1vw;
 }
