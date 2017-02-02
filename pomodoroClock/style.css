@@ -1,0 +1,41 @@
+body {
+	background: black;
+}
+
+.container {
+	height: 300px;
+	width: 600px;
+	background: darkgray;
+	margin: 50px auto;
+	position: relative;
+}
+
+.clock {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+}
+
+.addMinute {
+
+}
+
+.timer {
+	font-size: 80px;
+	border: 2px solid white;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+
+.subMinute {
+
+}
+
+button.startStop {
+	position: absolute;
+	left: 46.5%;
+	margin-top: 20px;
+}
