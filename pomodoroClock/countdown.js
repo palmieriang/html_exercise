@@ -98,20 +98,23 @@ $(document).ready(function() {
 
 		function timer() {
 			defaultStart--;
+			if (defaultStart===0) {
+				clearInterval(counter);
+			}
 			$('#count').html(defaultStart);
 		}
 
 	});
 
 //	another way to do the same
-	$('.startStop').click(function() {
+	// $('.startStop').click(function() {
 		
-		setInterval(function() {
-			defaultStart--;
-			$('#count').html(defaultStart);		
-		},1000);
+	// 	setInterval(function() {
+	// 		defaultStart--;
+	// 		$('#count').html(defaultStart);		
+	// 	},1000);
 
-	});
+	// });
 
 //	add e subtract minute function for  timer
 	$('.addMinute').click(function() {
