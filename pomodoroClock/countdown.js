@@ -91,6 +91,28 @@ $(document).ready(function() {
 
 	console.log(defaultStart);
 
+//  This function starts the countdown
+	$('.startStop').click(function() {
+		
+		var counter = setInterval(timer, 1000);
+
+		function timer() {
+			defaultStart--;
+			$('#count').html(defaultStart);
+		}
+
+	});
+
+//	another way to do the same
+	$('.startStop').click(function() {
+		
+		setInterval(function() {
+			defaultStart--;
+			$('#count').html(defaultStart);		
+		},1000);
+
+	});
+
 //	add e subtract minute function for  timer
 	$('.addMinute').click(function() {
 		defaultStart++;
