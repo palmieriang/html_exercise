@@ -85,11 +85,15 @@
 	
 $(document).ready(function() {
 
-	var defaultStart = parseInt($('#count').html());
+	var minutes = parseInt($('#count').html());
 
-	var defaultStartBreak = parseInt($('#countBreak').html());
+	var seconds = minutes * 60;
 
-	console.log(defaultStart);
+	var minutesBreak = parseInt($('#countBreak').html());
+
+	var secondsBreak = minutesBreak * 60;
+
+	//console.log(minutes);
 
 //  This function starts the countdown
 	$('.startStop').click(function() {
@@ -97,11 +101,22 @@ $(document).ready(function() {
 		var counter = setInterval(timer, 1000);
 
 		function timer() {
-			defaultStart--;
-			if (defaultStart===0) {
+			minutes--;
+			if(minutes===0) {
 				clearInterval(counter);
+				var startBreak = setInterval(breakTimer, 1000);
 			}
-			$('#count').html(defaultStart);
+			$('#count').html(minutes);
+
+			function breakTimer() {
+				minutesBreak--;
+				console.log(minutesBreak);
+				if(minutesBreak===0) {
+					clearInterval(startBreak);
+					timer();
+				}
+				$('#countBreak').html(minutesBreak);
+			}
 		}
 
 	});
@@ -118,39 +133,33 @@ $(document).ready(function() {
 
 //	add e subtract minute function for  timer
 	$('.addMinute').click(function() {
-		defaultStart++;
-		console.log(defaultStart);
-		$('#count').html(defaultStart);
+		minutes++;
+		console.log(minutes);
+		$('#count').html(minutes);
 	})
 
 	$('.subMinute').click(function() {
-		if(defaultStart>1) {
-			defaultStart--;
-			console.log(defaultStart);
-			$('#count').html(defaultStart);			
+		if(minutes>1) {
+			minutes--;
+			console.log(minutes);
+			$('#count').html(minutes);			
 		}
 	});
 
 //	add e subtract minute function for  break timer
 	$('.addMinuteBreak').click(function() {
-		defaultStart++;
-		console.log(defaultStart);
-		$('#countBreak').html(defaultStart);
+		minutesBreak++;
+		console.log(minutesBreak);
+		$('#countBreak').html(minutesBreak);
 	})
 
 	$('.subMinuteBreak').click(function() {
-		if(defaultStart>1) {
-			defaultStart--;
-			console.log(defaultStart);
-			$('#countBreak').html(defaultStart);			
+		if(minutesBreak>1) {
+			minutesBreak--;
+			console.log(minutesBreak);
+			$('#countBreak').html(minutesBreak);			
 		}
 	});
-
-
-
-
-
-
 
 
 
