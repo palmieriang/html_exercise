@@ -25,18 +25,23 @@ $(document).ready(function() {
 			if(minutes%60>=10) {
 				$('#count').html(Math.floor(minutes/60)+':'+minutes%60);
 			} else {
-				$('#count').html('0:'+'0'+minutes);
+				$('#count').html(Math.floor(minutes/60)+':'+'0'+minutes%60);
 			}
-			
+
+			minutesBreak*=60;			
 			function breakTimer() {
 				minutesBreak--;
-				console.log(minutesBreak);
 				if(minutesBreak===0) {
 					clearInterval(startBreak);
 					minutes = minutesInit*60;
 					counter = setInterval(timer, 1000);
 				}
-				$('#countBreak').html(minutesBreak);
+
+				if(minutesBreak%60>=10) {
+					$('#countBreak').html(Math.floor(minutesBreak/60)+':'+minutesBreak%60);
+				} else {
+					$('#countBreak').html(Math.floor(minutesBreak/60)+':'+'0'+minutesBreak%60);
+				}
 			}
 		}
 	});
