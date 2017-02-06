@@ -1,128 +1,42 @@
-// $(document).ready(function() { 
-
-	// function startCount() {
-
-	// 	var defaultStart = 5;
- //        var seconds = defaultStart % 60;
- //        var minutes = Math.floor(defaultStart / 60) % 60;
-
- //        setInterval(function() {
- //        	seconds = 59;
- //        	seconds--;
-
- //        	$(".timer").html(seconds);
-
- //                seconds = 59;
- //                minutes--;
- //                if(minutes < 0)
- //                {
- //                    $scope.minutes = 59;
- //                }
-
- //        },1000);
-	// }
-
-
-// });
-
-
-	// function startCount() {
-		
-	// 	var minutes = ('0' + new Date().getMinutes()).slice(-2);
-	// 	var hours = ('0' + new Date().getHours()).slice(-2);
-	// 	var time = hours + ':' + minutes;
-
-	// 	$(".timer").html(time);
-
-	// }
-
-
-
-	// function getTimeRemaining(endtime) {
-	// 	var defaultStart = 5;
- //        var seconds = defaultStart % 60;
- //        var minutes = Math.floor(defaultStart / 60) % 60;
- //        return {
-	// 	    'minutes': minutes,
-	// 	    'seconds': seconds        	
- //        }
- //        console.log(seconds);
- //        console.log(minutes);
-	// }
-
-	// function startCount() {
-	// 	document.getElementById("demo").html(seconds);
-	// }
-
-	// function reduce() {
-	// 	var start = 10;
-	// 	start--;
-	// 	$("#demo").html(start);
-	// }
-
-
-	// window.setInterval(function(){
-	// 	reduce();
-	// }, 1000);
-
-        // setInterval(function() {
-        // 	seconds = 59;
-        // 	seconds--;
-
-        // 	$("#demo").html(seconds);
-
-        //         seconds = 59;
-        //         minutes--;
-        //         if(minutes < 0)
-        //         {
-        //             $scope.minutes = 59;
-        //         }
-
-        // },1000);
-
-
-
-	
 $(document).ready(function() {
 
 	var minutesInit = parseInt($('#count').html());
 
 	var minutes = minutesInit;
 
-	var seconds = minutes * 60;
+	var minutesBreakInt = parseInt($('#countBreak').html());
 
-	var minutesBreakInit = parseInt($('#countBreak').html());
-
-	var minutesBreak = minutesBreakInit;
-
-	var secondsBreak = minutesBreak * 60;
-
-	//console.log(minutes);
+	var minutesBreak = minutesBreakInt;
 
 //  This function starts the countdown
 	$('.startStop').click(function() {
 		
 		var counter = setInterval(timer, 1000);
+		minutes*=60;
 
 		function timer() {
 			minutes--;
 			if(minutes===0) {
 				clearInterval(counter);
-				minutesBreak = minutesBreakInit;
+				minutesBreak = minutesBreakInt;
 				var startBreak = setInterval(breakTimer, 1000);
 			}
-			$('#count').html(minutes);
 
+			if(minutes%60>=10) {
+				$('#count').html(Math.floor(minutes/60)+':'+minutes%60);
+			} else {
+				$('#count').html('0:'+'0'+minutes);
+			}
+			
 			function breakTimer() {
 				minutesBreak--;
 				console.log(minutesBreak);
 				if(minutesBreak===0) {
-					clearInterval(startBreak);	
-					minutes = minutesInit;
-					console.log(minutes);
+					clearInterval(startBreak);
+					minutes = minutesInit*60;
 					counter = setInterval(timer, 1000);
 				}
-				$('#countBreak').html(minutesBreak);		
+				$('#countBreak').html(minutesBreak);
 			}
 		}
 	});
@@ -156,17 +70,17 @@ $(document).ready(function() {
 
 //	add e subtract minute function for  break timer
 	$('.addMinuteBreak').click(function() {
-		minutesBreakInit++;
+		minutesBreakInt++;
 		console.log(minutesBreak);
-		minutesBreak = minutesBreakInit;
+		minutesBreak = minutesBreakInt;
 		$('#countBreak').html(minutesBreak);
 	})
 
 	$('.subMinuteBreak').click(function() {
-		if(minutesBreakInit>1) {
-			minutesBreakInit--;
+		if(minutesBreakInt>1) {
+			minutesBreakInt--;
 			console.log(minutesBreak);
-			minutesBreak = minutesBreakInit;
+			minutesBreak = minutesBreakInt;
 			$('#countBreak').html(minutesBreak);			
 		}
 	});
