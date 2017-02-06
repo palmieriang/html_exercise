@@ -85,11 +85,15 @@
 	
 $(document).ready(function() {
 
-	var minutes = parseInt($('#count').html());
+	var minutesInit = parseInt($('#count').html());
+
+	var minutes = minutesInit;
 
 	var seconds = minutes * 60;
 
-	var minutesBreak = parseInt($('#countBreak').html());
+	var minutesBreakInit = parseInt($('#countBreak').html());
+
+	var minutesBreak = minutesBreakInit;
 
 	var secondsBreak = minutesBreak * 60;
 
@@ -104,6 +108,7 @@ $(document).ready(function() {
 			minutes--;
 			if(minutes===0) {
 				clearInterval(counter);
+				minutesBreak = minutesBreakInit;
 				var startBreak = setInterval(breakTimer, 1000);
 			}
 			$('#count').html(minutes);
@@ -112,13 +117,14 @@ $(document).ready(function() {
 				minutesBreak--;
 				console.log(minutesBreak);
 				if(minutesBreak===0) {
-					clearInterval(startBreak);
-					timer();
+					clearInterval(startBreak);	
+					minutes = minutesInit;
+					console.log(minutes);
+					counter = setInterval(timer, 1000);
 				}
-				$('#countBreak').html(minutesBreak);
+				$('#countBreak').html(minutesBreak);		
 			}
 		}
-
 	});
 
 //	another way to do the same
@@ -133,30 +139,34 @@ $(document).ready(function() {
 
 //	add e subtract minute function for  timer
 	$('.addMinute').click(function() {
-		minutes++;
+		minutesInit++;
 		console.log(minutes);
+		minutes = minutesInit;
 		$('#count').html(minutes);
 	})
 
 	$('.subMinute').click(function() {
-		if(minutes>1) {
-			minutes--;
+		if(minutesInit>1) {
+			minutesInit--;
 			console.log(minutes);
+			minutes = minutesInit;
 			$('#count').html(minutes);			
 		}
 	});
 
 //	add e subtract minute function for  break timer
 	$('.addMinuteBreak').click(function() {
-		minutesBreak++;
+		minutesBreakInit++;
 		console.log(minutesBreak);
+		minutesBreak = minutesBreakInit;
 		$('#countBreak').html(minutesBreak);
 	})
 
 	$('.subMinuteBreak').click(function() {
-		if(minutesBreak>1) {
-			minutesBreak--;
+		if(minutesBreakInit>1) {
+			minutesBreakInit--;
 			console.log(minutesBreak);
+			minutesBreak = minutesBreakInit;
 			$('#countBreak').html(minutesBreak);			
 		}
 	});
