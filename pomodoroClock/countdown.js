@@ -15,6 +15,7 @@ $(document).ready(function() {
 		minutes*=60;
 
 		function timer() {
+			$('.timer00').hide();
 			minutes--;
 			if(minutes===0) {
 				clearInterval(counter);
@@ -23,13 +24,14 @@ $(document).ready(function() {
 			}
 
 			if(minutes%60>=10) {
-				$('#count').html(Math.floor(minutes/60)+':'+minutes%60);
+				$('#count').html('0'+Math.floor(minutes/60)+':'+minutes%60);
 			} else {
-				$('#count').html(Math.floor(minutes/60)+':'+'0'+minutes%60);
+				$('#count').html('0'+Math.floor(minutes/60)+':'+'0'+minutes%60);
 			}
 
 			minutesBreak*=60;			
 			function breakTimer() {
+				$('.break00').hide();
 				minutesBreak--;
 				if(minutesBreak===0) {
 					clearInterval(startBreak);
@@ -38,9 +40,9 @@ $(document).ready(function() {
 				}
 
 				if(minutesBreak%60>=10) {
-					$('#countBreak').html(Math.floor(minutesBreak/60)+':'+minutesBreak%60);
+					$('#countBreak').html('0'+Math.floor(minutesBreak/60)+':'+minutesBreak%60);
 				} else {
-					$('#countBreak').html(Math.floor(minutesBreak/60)+':'+'0'+minutesBreak%60);
+					$('#countBreak').html('0'+Math.floor(minutesBreak/60)+':'+'0'+minutesBreak%60);
 				}
 			}
 		}
@@ -61,15 +63,23 @@ $(document).ready(function() {
 		minutesInit++;
 		console.log(minutes);
 		minutes = minutesInit;
-		$('#count').html(minutes);
-	})
+		if (minutes < 10) {
+			$('#count').html('0'+minutes);
+		} else {
+			$('#count').html(minutes);
+		}
+	});
 
 	$('.subMinute').click(function() {
 		if(minutesInit>1) {
 			minutesInit--;
 			console.log(minutes);
 			minutes = minutesInit;
-			$('#count').html(minutes);			
+			if (minutes < 10) {
+				$('#count').html('0'+minutes);
+			} else {
+				$('#count').html(minutes);
+			}
 		}
 	});
 
@@ -79,6 +89,11 @@ $(document).ready(function() {
 		console.log(minutesBreak);
 		minutesBreak = minutesBreakInt;
 		$('#countBreak').html(minutesBreak);
+		if (minutesBreak < 10) {
+			$('#countBreak').html('0'+minutesBreak);
+		} else {
+			$('#countBreak').html(minutesBreak);
+		}		
 	})
 
 	$('.subMinuteBreak').click(function() {
@@ -86,7 +101,12 @@ $(document).ready(function() {
 			minutesBreakInt--;
 			console.log(minutesBreak);
 			minutesBreak = minutesBreakInt;
-			$('#countBreak').html(minutesBreak);			
+			$('#countBreak').html(minutesBreak);
+			if (minutesBreak < 10) {
+				$('#countBreak').html('0'+minutesBreak);
+			} else {
+				$('#countBreak').html(minutesBreak);
+			}
 		}
 	});
 
