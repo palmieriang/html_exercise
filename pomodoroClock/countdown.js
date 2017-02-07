@@ -11,6 +11,8 @@ $(document).ready(function() {
 //  This function starts the countdown
 	$('.startStop').click(function() {
 		
+		$('.fa-power-off').css('color', 'green');
+
 		var counter = setInterval(timer, 1000);
 		minutes*=60;
 
@@ -22,7 +24,6 @@ $(document).ready(function() {
 				minutesBreak = minutesBreakInt;
 				var startBreak = setInterval(breakTimer, 1000);
 			}
-
 			if(minutes%60>=10) {
 				$('#count').html('0'+Math.floor(minutes/60)+':'+minutes%60);
 			} else {
@@ -38,7 +39,6 @@ $(document).ready(function() {
 					minutes = minutesInit*60;
 					counter = setInterval(timer, 1000);
 				}
-
 				if(minutesBreak%60>=10) {
 					$('#countBreak').html('0'+Math.floor(minutesBreak/60)+':'+minutesBreak%60);
 				} else {
@@ -109,6 +109,7 @@ $(document).ready(function() {
 			}
 		}
 	});
+
 
 
 

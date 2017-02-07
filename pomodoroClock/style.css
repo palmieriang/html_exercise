@@ -19,6 +19,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	border-radius: 50px;
+	box-shadow: 4px -3px 1px 2px #3a3738;
 }
 
 .display {
@@ -49,11 +50,12 @@ button.startStop {
 	width: 150px;
 	border-radius: 5px;
 	border: 1px solid black;
+	color: red;
 }
 
 .button-side {
     position: absolute;
-    font-size: 37px;
+    font-size: 30px;
     border: 2px solid black;
     height: 60px;
     width: 33px;
@@ -83,4 +85,13 @@ button.startStop {
     right: 4%;
     top: 54%;
     letter-spacing: -4px;
+}
+
+.button-side:active {
+	color: white;	
+}
+
+.logo {
+	position: absolute;
+	top: 9%;
 }
