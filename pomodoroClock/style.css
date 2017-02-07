@@ -7,11 +7,10 @@
 
 body {
 	background: black;
-	font-family: 'digital-7';
 }
 
 .container {
-	height: 300px;
+	height: 250px;
 	width: 600px;
 	background: darkgray;
 	margin: 50px auto;
@@ -23,11 +22,9 @@ body {
 }
 
 .display {
-	width: 400px;
-}
-
-.addMinute {
-
+	width: 450px;
+	background: black;
+	border-radius: 4px;
 }
 
 .timer {
@@ -35,6 +32,10 @@ body {
 	width: 100%;
 	text-align: center;
 	color: #00ffff;
+	visibility: hidden;
+	font-family: 'digital-7';
+	margin-bottom: -5px;
+	margin-top: 5px;
 }
 
 .subMinute {
@@ -43,5 +44,43 @@ body {
 
 button.startStop {
 	position: absolute;
-	margin-top: 20%;
+	margin-top: 16%;
+	height: 25px;
+	width: 150px;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+.button-side {
+    position: absolute;
+    font-size: 37px;
+    border: 2px solid black;
+    height: 60px;
+    width: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.addMinute {
+    left: 4%;
+    top: 21%;
+}
+
+.addMinuteBreak {
+    left: 4%;
+    top: 54%;
+}
+
+.subMinute {
+    right: 4%;
+    top: 21%;
+    letter-spacing: -4px;
+}
+
+.subMinuteBreak {
+    right: 4%;
+    top: 54%;
+    letter-spacing: -4px;
 }
