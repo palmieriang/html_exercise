@@ -8,62 +8,82 @@ $(document).ready(function() {
 
 	var minutesBreak = minutesBreakInt;
 
+	var running = false;
+
 	$('.progress-bar').hide();
+
+	var counter = null;
 
 //  This function starts the countdown
 	$('.startStop').click(function() {
 		
-		$('.fa-power-off').css('color', 'green');
+		if (!running) {
 
-		var counter = setInterval(timer, 1000);
-		minutes*=60;
+			console.log(1);
 
-		function timer() {
-			$('.timer00').hide();
-			minutes--;
+			running = true;
 
-			var percentage = minutes / (minutesInit*60) * 100;
+			$('.fa-power-off').css('color', 'green');
 
-			$('.progress-bar-left').show();
+			counter = setInterval(timer, 1000);
+			minutes*=60;
 
-			$('.loading-left').height(percentage+'%');
+			function timer() {
+				$('.timer00').hide();
+				minutes--;
 
-			if(minutes===0) {
-				clearInterval(counter);
-				$('.progress-bar-left').hide();
-				minutesBreak = minutesBreakInt;
-				var startBreak = setInterval(breakTimer, 1000);
-			}
-			if(minutes%60>=10) {
-				$('#count').html('0'+Math.floor(minutes/60)+':'+minutes%60);
-			} else {
-				$('#count').html('0'+Math.floor(minutes/60)+':'+'0'+minutes%60);
-			}
+				var percentage = minutes / (minutesInit*60) * 100;
 
-			minutesBreak*=60;			
-			function breakTimer() {
-				$('.break00').hide();
-				minutesBreak--;
+				$('.progress-bar-left').show();
 
-				var percentage = minutesBreak / (minutesBreakInt*60) * 100;
+				$('.loading-left').height(percentage+'%');
 
-				$('.progress-bar-right').show();
-
-				$('.loading-right').height(percentage+'%');
-
-				if(minutesBreak===0) {
-					clearInterval(startBreak);
-					$('.progress-bar-right').hide();
-					minutes = minutesInit*60;
-					counter = setInterval(timer, 1000);
+				if(minutes===0) {
+					clearInterval(counter);
+					$('.progress-bar-left').hide();
+					minutesBreak = minutesBreakInt;
+					var startBreak = setInterval(breakTimer, 1000);
 				}
-				if(minutesBreak%60>=10) {
-					$('#countBreak').html('0'+Math.floor(minutesBreak/60)+':'+minutesBreak%60);
+
+				if(minutes%60>=10) {
+					$('#count').html('0'+Math.floor(minutes/60)+':'+minutes%60);
 				} else {
-					$('#countBreak').html('0'+Math.floor(minutesBreak/60)+':'+'0'+minutesBreak%60);
+					$('#count').html('0'+Math.floor(minutes/60)+':'+'0'+minutes%60);
+				}
+
+				minutesBreak*=60;			
+				function breakTimer() {
+					$('.break00').hide();
+					minutesBreak--;
+
+					var percentage = minutesBreak / (minutesBreakInt*60) * 100;
+
+					$('.progress-bar-right').show();
+
+					$('.loading-right').height(percentage+'%');
+
+					if(minutesBreak===0) {
+						clearInterval(startBreak);
+						$('.progress-bar-right').hide();
+						minutes = minutesInit*60;
+						counter = setInterval(timer, 1000);
+					}
+					if(minutesBreak%60>=10) {
+						$('#countBreak').html('0'+Math.floor(minutesBreak/60)+':'+minutesBreak%60);
+					} else {
+						$('#countBreak').html('0'+Math.floor(minutesBreak/60)+':'+'0'+minutesBreak%60);
+					}
 				}
 			}
+		} else {
+			console.log(2);
+			clearInterval(counter);
+			minutes = minutesInit;
+			minutesBreak = minutesBreakInt;
+
+			running = false;
 		}
+
 	});
 
 //	another way to do the same
@@ -128,14 +148,7 @@ $(document).ready(function() {
 		}
 	});
 
-
-
-
-
-
 });
-
-
 
 
 	// This way I need the onclick="function();" on each button
