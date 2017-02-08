@@ -53,7 +53,7 @@ $(document).ready(function() {
 
 				if(minutesBreak===0) {
 					clearInterval(startBreak);
-					$('.progress-bar-left').hide();
+					$('.progress-bar-right').hide();
 					minutes = minutesInit*60;
 					counter = setInterval(timer, 1000);
 				}
