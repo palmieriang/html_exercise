@@ -42,28 +42,32 @@ body {
 	width: 450px;
 	border-radius: 4px;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.74),black);
+	position: relative;
+	height: 145px;
 }
 
 .display:after {
-    content: '';
+    /*content: '';*/
     position: absolute;
-    top: 54px;
-    left: 78px;
-    width: calc(75% - 4px);
-    height: 57%;
+    top: 3px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
     background: linear-gradient(rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
 }
 
 .timer {
 	font-size: 80px;
-	width: 100%;
+	width: calc(80% - 8px);
 	text-align: center;
 	color: #00ffff;
-	/* visibility: hidden; */
 	font-family: 'digital-7';
-	margin-bottom: -5px;
 	margin-top: 5px;
+	position: absolute;
+	left: calc(10% - -4px);
 }
+
+.second-timer {top: 50%;}
 
 .subMinute {
 
@@ -169,4 +173,28 @@ button.startStop:after {
 	height: 100px;
 	width: 100%;
 	background: #392E20;
+}
+
+.progress-bar {
+	position: absolute;
+	height: calc(100% - 6px);
+	width: 10%;
+}
+
+.progress-bar-left {
+	top: 3px;
+	left: 3px;
+	background: green;
+}
+
+.progress-bar-right {
+	top: 3px;
+	right: 3px;
+	background: red;
+}
+
+.loading {
+	height: 1%;
+	width: 100%;
+	background: black;
 }

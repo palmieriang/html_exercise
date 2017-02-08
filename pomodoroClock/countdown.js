@@ -8,6 +8,8 @@ $(document).ready(function() {
 
 	var minutesBreak = minutesBreakInt;
 
+	$('.progress-bar').hide();
+
 //  This function starts the countdown
 	$('.startStop').click(function() {
 		
@@ -19,8 +21,16 @@ $(document).ready(function() {
 		function timer() {
 			$('.timer00').hide();
 			minutes--;
+
+			var percentage = minutes / (minutesInit*60) * 100;
+
+			$('.progress-bar-left').show();
+
+			$('.loading-left').height(percentage+'%');
+
 			if(minutes===0) {
 				clearInterval(counter);
+				$('.progress-bar-left').hide();
 				minutesBreak = minutesBreakInt;
 				var startBreak = setInterval(breakTimer, 1000);
 			}
@@ -34,8 +44,16 @@ $(document).ready(function() {
 			function breakTimer() {
 				$('.break00').hide();
 				minutesBreak--;
+
+				var percentage = minutesBreak / (minutesBreakInt*60) * 100;
+
+				$('.progress-bar-right').show();
+
+				$('.loading-right').height(percentage+'%');
+
 				if(minutesBreak===0) {
 					clearInterval(startBreak);
+					$('.progress-bar-left').hide();
 					minutes = minutesInit*60;
 					counter = setInterval(timer, 1000);
 				}
