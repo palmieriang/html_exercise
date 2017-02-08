@@ -77,6 +77,7 @@ button.startStop {
 	border-radius: 5px;
 	border: 1px solid black;
 	color: red;
+	outline: 0;
 }
 
 button.startStop:after {
