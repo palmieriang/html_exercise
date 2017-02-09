@@ -66,6 +66,8 @@ $(document).ready(function() {
 
 					$('.progress-bar-right').show();
 
+					$('.stop').toggleClass('flash-icon');
+
 					$('.loading-right').height(percentage+'%');
 
 					if(minutesBreak===0) {
