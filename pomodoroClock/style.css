@@ -215,6 +215,17 @@ button.startStop:after {
 	top: 101px;
 }
 
+.icon-right {
+	left: 79%;
+	color: #00ffff;
+	position: relative;
+}
+
+.icon-right .bell {
+	position: absolute;
+	top: 30px;
+}
+
 .flash-icon {
 	visibility: hidden;
 }
