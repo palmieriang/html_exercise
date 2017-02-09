@@ -2,39 +2,42 @@ $(document).ready(function() {
 
 	var minutesInit = parseInt($('#count').html());
 
-	var minutes = minutesInit;
+	var minutes = minutesInit; //I need this variable to restart the timer
 
 	var minutesBreakInt = parseInt($('#countBreak').html());
 
-	var minutesBreak = minutesBreakInt;
+	var minutesBreak = minutesBreakInt; //I need this variable to restart the break timer
 
-	var running = false;
+	var running = false; //With this variable I can check if the main function is already running
 
 	$('.progress-bar').hide();
 
-	var counter = null;
+	var counter = null; //If the main function is already running, I can stop it with this variable
 
 //  This function starts the countdown
 	$('.startStop').click(function() {
 		
-		if (!running) {
-
-			console.log(1);
+		if (!running) {	//If running = false it starts and sets the variable = true
 
 			running = true;
 
-			$('.fa-power-off').css('color', 'green');
+			$('.fa-power-off').css('color', 'green'); //Change On/Off icon color. Red --> green
 
 			counter = setInterval(timer, 1000);
+
 			minutes*=60;
 
 			function timer() {
+
 				$('.timer00').hide();
+
 				minutes--;
 
 				var percentage = minutes / (minutesInit*60) * 100;
 
 				$('.progress-bar-left').show();
+
+				$('.heart').toggleClass('flash-icon');
 
 				$('.loading-left').height(percentage+'%');
 
@@ -51,9 +54,12 @@ $(document).ready(function() {
 					$('#count').html('0'+Math.floor(minutes/60)+':'+'0'+minutes%60);
 				}
 
-				minutesBreak*=60;			
+				minutesBreak*=60;
+
 				function breakTimer() {
+
 					$('.break00').hide();
+
 					minutesBreak--;
 
 					var percentage = minutesBreak / (minutesBreakInt*60) * 100;
@@ -76,10 +82,11 @@ $(document).ready(function() {
 				}
 			}
 		} else {
-			console.log(2);
-			clearInterval(counter);
-			minutes = minutesInit;
-			minutesBreak = minutesBreakInt;
+			clearInterval(counter); //If the main function is already running, this will stop it
+
+			minutes = minutesInit; //Restart timer variables
+
+			minutesBreak = minutesBreakInt; //Restart break timer variables
 
 			running = false;
 		}

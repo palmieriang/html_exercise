@@ -198,3 +198,23 @@ button.startStop:after {
 	width: 100%;
 	background: black;
 }
+
+.icon-left {
+	left: 18.5%;
+	color: #00ffff;
+	position: relative;
+}
+
+.icon-left .heart {
+	position: absolute;
+	top: 30px;
+}
+
+.icon-left .stop {
+	position: absolute;
+	top: 101px;
+}
+
+.flash-icon {
+	visibility: hidden;
+}
