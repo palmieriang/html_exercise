@@ -173,6 +173,8 @@ button.startStop:after {
 	height: 100px;
 	width: 100%;
 	background: #392E20;
+	min-width: 700px;
+	position: relative;
 }
 
 .progress-bar {
@@ -228,4 +230,18 @@ button.startStop:after {
 
 .flash-icon {
 	visibility: hidden;
+}
+
+.footer {
+  font-size: 25px;
+  color: #392e20;
+  text-shadow: 1px -1px 1px rgb(23, 16, 7);
+  position: absolute;
+  right: 3%;
+  top: 46%;
+}
+
+.footer a {
+  text-decoration: none;
+  color: rgba(255, 165, 0, 0.2);
 }
