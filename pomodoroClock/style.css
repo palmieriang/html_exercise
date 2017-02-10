@@ -245,3 +245,8 @@ button.startStop:after {
   text-decoration: none;
   color: rgba(255, 165, 0, 0.2);
 }
+
+.squareLoading {
+    border: 1px solid black;
+    height: 1px;
+}
