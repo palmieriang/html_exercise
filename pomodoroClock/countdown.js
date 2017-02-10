@@ -14,9 +14,13 @@ $(document).ready(function() {
 
 	var counter = null; //If the main function is already running, I can stop it with this variable
 
+	var alarmSound = $('#alarmSound')[0];
+
+	$('.bell').hide();	//This will hide the bell at the beginning
+
 //  This function starts the countdown
 	$('.startStop').click(function() {
-		
+
 		if (!running) {	//If running = false it starts and sets the variable = true
 
 			running = true;
@@ -31,6 +35,8 @@ $(document).ready(function() {
 
 				$('.timer00').hide();
 
+				$('.bell').hide();	//This will hide the bell when the main timer restarts after the break time
+
 				minutes--;
 
 				var percentage = minutes / (minutesInit*60) * 100;
@@ -42,6 +48,7 @@ $(document).ready(function() {
 				$('.loading-left').height(percentage+'%');
 
 				if(minutes===0) {
+					sound();
 					clearInterval(counter);
 					$('.progress-bar-left').hide();
 					minutesBreak = minutesBreakInt;
@@ -60,6 +67,8 @@ $(document).ready(function() {
 
 					$('.break00').hide();
 
+					$('.bell').hide();	//This will hide the bell when the break timer restarts after the main time
+
 					minutesBreak--;
 
 					var percentage = minutesBreak / (minutesBreakInt*60) * 100;
@@ -71,6 +80,7 @@ $(document).ready(function() {
 					$('.loading-right').height(percentage+'%');
 
 					if(minutesBreak===0) {
+						sound();
 						clearInterval(startBreak);
 						$('.progress-bar-right').hide();
 						minutes = minutesInit*60;
@@ -81,6 +91,11 @@ $(document).ready(function() {
 					} else {
 						$('#countBreak').html('0'+Math.floor(minutesBreak/60)+':'+'0'+minutesBreak%60);
 					}
+				}
+
+				function sound() {
+					alarmSound.play();
+					$('.bell').show();
 				}
 			}
 		} else {
