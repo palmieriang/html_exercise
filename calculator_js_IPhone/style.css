@@ -222,3 +222,14 @@ body {
 	background: #cc8400;
 }
 
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: orange;
+}
