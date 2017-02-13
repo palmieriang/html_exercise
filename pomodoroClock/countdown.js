@@ -100,6 +100,8 @@ $(document).ready(function() {
 			}
 		} else {
 			clearInterval(counter); //If the main function is already running, this will stop it
+			
+			$('.fa-power-off').css('color', 'red'); //Change On/Off icon color. Green --> red
 
 			minutes = minutesInit; //Restart timer variables
 
