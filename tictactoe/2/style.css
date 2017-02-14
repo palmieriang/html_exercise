@@ -14,8 +14,12 @@ body {
 
 .square {
 	float: left;
-	height: 119px;
+	height: 84px;
 	width: 119px;
+	text-align: center;
+	font-size: 50px;
+	padding-top: 35px;
+	color: white;
 }
 
 .bottom {
