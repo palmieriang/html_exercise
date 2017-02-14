@@ -1,0 +1,27 @@
+body {
+	background-color: black;
+}
+
+.gameboard {
+	width: 360px;
+	margin: 40px auto 0 auto;
+}
+
+.row {
+	clear: both;
+	overflow: hidden;
+}
+
+.square {
+	float: left;
+	height: 119px;
+	width: 119px;
+}
+
+.bottom {
+	border-bottom: 1px solid white;
+}
+
+.right {
+	border-right: 1px solid white;	
+}
