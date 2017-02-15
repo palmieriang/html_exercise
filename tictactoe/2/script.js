@@ -2,6 +2,8 @@ $(document).ready(function() {
 
 	var player = 1;
 
+	var count = 0;
+
 	$('.square').on('click', function() {
 		var squareSelected = $(this);
 		if(squareSelected.hasClass('fa fa-times') || squareSelected.hasClass('fa fa-circle-o')) {
@@ -10,16 +12,20 @@ $(document).ready(function() {
 			// all the rest
 			if (player === 1) {
 				squareSelected.addClass('fa fa-times');
+				count++;
 				// this function will return true or false
 				if(checkIfPlayerWon('fa fa-times')) { 
 					alert('Player ' + player + ' has won!');
+					reset();
 				} else {
 					player = 2;
 				}
 			} else {
 				squareSelected.addClass('fa fa-circle-o');
+				count++;
 				if(checkIfPlayerWon('fa fa-circle-o')) {
 					alert('Player ' + player + ' has won!');
+					reset();
 				} else {
 					player = 1;
 				}
@@ -44,9 +50,20 @@ $(document).ready(function() {
 			return true;
 		}else if($('.sq3').hasClass(symbol) && $('.sq5').hasClass(symbol) && $('.sq7').hasClass(symbol)) {
 			return true;
+		} else if(count === 9) {
+			alert('Tie');
+			reset();
+			return false;
 		} else {
 			return false;
 		}
 	}
+
+	function reset() {
+		$('.square').removeClass('fa fa-times');
+		$('.square').removeClass('fa fa-circle-o');
+		count = 0;
+	}
+
 
 });
