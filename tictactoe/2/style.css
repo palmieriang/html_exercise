@@ -1,5 +1,5 @@
 body {
-	background-color: black;
+	background-image: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png');
 }
 
 .gameboard {
@@ -14,18 +14,23 @@ body {
 
 .square {
 	float: left;
-	height: 84px;
-	width: 119px;
+	height: 100px;
+	width: 117px;
 	text-align: center;
-	font-size: 50px;
-	padding-top: 35px;
-	color: white;
+	font-size: 80px;
+	padding-top: 15px;
+	color: #461F00;
+	text-shadow: 5px 1px 1px black;
 }
 
 .bottom {
-	border-bottom: 1px solid white;
+	border-bottom: 4px solid #392E20;
 }
 
 .right {
-	border-right: 1px solid white;	
+	border-right: 4px solid #392E20;
+}
+
+.result {
+	position: absolute;
 }
