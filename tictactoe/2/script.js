@@ -4,6 +4,10 @@ $(document).ready(function() {
 
 	var count = 0;
 
+	var score1 = 0;
+
+	var score2 = 0;
+
 	$('.square').on('click', function() {
 		var squareSelected = $(this);
 		if(squareSelected.hasClass('fa fa-times') || squareSelected.hasClass('fa fa-circle-o')) {
@@ -16,6 +20,8 @@ $(document).ready(function() {
 				// this function will return true or false
 				if(checkIfPlayerWon('fa fa-times')) { 
 					alert('Player ' + player + ' has won!');
+					score1++;
+					$('#score1').html(score1);
 					reset();
 				} else {
 					player = 2;
@@ -25,6 +31,8 @@ $(document).ready(function() {
 				count++;
 				if(checkIfPlayerWon('fa fa-circle-o')) {
 					alert('Player ' + player + ' has won!');
+					score2++;
+					$('#score2').html(score2);
 					reset();
 				} else {
 					player = 1;
