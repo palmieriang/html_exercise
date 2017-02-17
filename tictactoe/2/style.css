@@ -50,6 +50,8 @@ body {
 .left-side {
 	flex-grow: 1;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .right-side {
@@ -88,4 +90,15 @@ body {
 
 .player-name {
 	flex-grow: 2;
+}
+
+.player-turn {
+    flex-grow: 2;
+}
+
+.turn {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    width: 43px;
 }

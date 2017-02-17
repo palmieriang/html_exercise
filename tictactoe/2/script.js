@@ -8,6 +8,8 @@ $(document).ready(function() {
 
 	var score2 = 0;
 
+	$('.turn').addClass('fa fa-times');
+
 	$('.square').on('click', function() {
 		var squareSelected = $(this);
 		if(squareSelected.hasClass('fa fa-times') || squareSelected.hasClass('fa fa-circle-o')) {
@@ -25,6 +27,7 @@ $(document).ready(function() {
 					reset();
 				} else {
 					player = 2;
+					$('.turn').addClass('fa fa-circle-o');
 				}
 			} else {
 				squareSelected.addClass('fa fa-circle-o');
@@ -36,6 +39,9 @@ $(document).ready(function() {
 					reset();
 				} else {
 					player = 1;
+					console.log(11111);
+					$('.turn').removeClass('fa fa-circle-o');
+					$('.turn').addClass('fa fa-times');
 				}
 			}
 		}
