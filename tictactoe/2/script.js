@@ -39,7 +39,6 @@ $(document).ready(function() {
 					reset();
 				} else {
 					player = 1;
-					console.log(11111);
 					$('.turn').removeClass('fa fa-circle-o');
 					$('.turn').addClass('fa fa-times');
 				}
