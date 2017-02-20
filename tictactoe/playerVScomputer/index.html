@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <script src="https://use.fontawesome.com/736c59a21e.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="left-side">
+        <div class="row">Tic</div>
+        <div class="row">Tac</div>
+        <div class="row">Toe</div>
+        <!-- <input type="button" id="restart" value="Restart Game"/> -->
+        <!-- <div id="move"></div> -->
+        <div class="button wood" id="restart">
+            <div>Restart Game</div>
+        </div>
+        <div id="winner"></div>
+    </div>
+
+    <div class="center">
+        <div class="gameboard">
+            <div class="row">
+                <div class="square bottom right sq1" id="c00"></div>
+                <div class="square bottom right sq2" id="c01"></div>
+                <div class="square bottom sq3" id="c02"></div>
+            </div>
+            <div class="row">
+                <div class="square bottom right sq4" id="c10"></div>
+                <div class="square bottom right sq5" id="c11"></div>
+                <div class="square bottom sq6" id="c12"></div>
+            </div>
+            <div class="row">
+                <div class="square right sq7" id="c20"></div>
+                <div class="square right sq8" id="c21"></div>
+                <div class="square sq9" id="c22"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-side">
+        <div class="player">
+            <p class="player-name">Player: </p>
+            <p class="score" id="score1">0</p>
+        </div>
+        <div class="player">
+            <p class="player-name">Computer: </p>
+            <p class="score" id="score2">0</p>
+        </div>
+        <div class="player">
+            <div class="player-turn">Player's turn: </div>  
+            <div class="score">
+                <p class="turn"></p>
+            </div>
+        </div>
+        <marquee
+          onmouseover="this.stop()"
+          onmouseout="this.start()"
+          loop="-1"
+          behavior="scroll"
+          scrollamount="5"
+          scrolldelay="0"
+          direction="left"
+          align="right">
+        <a href="https://www.angelopalmieri.com" target="_blank">Designed & Coded by Angelo Palmieri</a><br>
+        </marquee>
+    </div>
+
+</div>
+
+</body>
+</html>
