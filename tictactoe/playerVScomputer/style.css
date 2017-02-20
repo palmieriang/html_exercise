@@ -39,7 +39,8 @@ body {
     font-size: 80px;
     padding-top: 15px;
     color: #461F00;
-    text-shadow: 5px 1px 1px black;
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.4);
+    font-family: fantasy;
 }
 
 .bottom {
