@@ -21,22 +21,41 @@ function restartGame() {
         [null, null, null]
     ];
     myMove = false;
+    $('div').removeClass('notEmpty');
     updateMove();
 }
 
 $(document).ready(function() {
     $(".square").click(function() {
-            console.log(board);
-        var cell = $(this).attr("id")
-        var row = parseInt(cell[1])
-        var col = parseInt(cell[2])
-        if (!myMove) {
-            board[row][col] = false;
-            console.log(board);
-            myMove = true;
-            updateMove();
-            makeMove();
+
+        if($(this).hasClass('notEmpty')) {
+            console.log('notEmpty');
+        } else {
+            var cell = $(this).attr("id")
+            var row = parseInt(cell[1])
+            var col = parseInt(cell[2])
+            $(this).addClass('notEmpty');
+            if (!myMove) {
+                board[row][col] = false;
+                myMove = true;
+                updateMove();
+                makeMove();
+            }
         }
+
+        // whitout check
+        //     console.log(board);
+        // var cell = $(this).attr("id")
+        // var row = parseInt(cell[1])
+        // var col = parseInt(cell[2])
+        // if (!myMove) {
+        //     board[row][col] = false;
+        //     console.log(board);
+        //     myMove = true;
+        //     updateMove();
+        //     makeMove();
+        // }
+
     });
     $("#restart").click(restartGame);
 });
@@ -56,15 +75,15 @@ function updateMove() {
         $('#score1').html(score1);
     }
 
-    // $("#move").text(myMove ? "AI's Move" : "Your move");
+    $(".turn").html(myMove ? '<i class="fa fa-circle-o" aria-hidden="true"></i>' : '<i class="fa fa-times" aria-hidden="true"></i>');
 
-    if(myMove) {
-        $(".turn").removeClass('fa fa-times');
-        $(".turn").addClass('fa fa-circle-o');
-    } else {
-        $(".turn").removeClass('fa fa-circle-o');
-        $(".turn").addClass('fa fa-times');
-    }
+    // if(myMove) {
+    //     $(".turn").removeClass('fa fa-times');
+    //     $(".turn").addClass('fa fa-circle-o');
+    // } else {
+    //     $(".turn").removeClass('fa fa-circle-o');
+    //     $(".turn").addClass('fa fa-times');
+    // }
 }
 
 function getWinner(board) {
@@ -104,6 +123,7 @@ function getWinner(board) {
         }
         if (diagonalComplete1 || diagonalComplete2) {
             return value ? 1 : 0;
+            myMove = false;
         }
     }
     if (allNotNull) {
@@ -124,6 +144,8 @@ function makeMove() {
     setTimeout(function() {
         board = minimaxMove(board);
         console.log(numNodes);
+        console.log('selected');
+        console.log(board);
         myMove = false;
         updateMove();
     }, 800);
