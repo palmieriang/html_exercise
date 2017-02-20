@@ -26,11 +26,13 @@ function restartGame() {
 
 $(document).ready(function() {
     $(".square").click(function() {
+            console.log(board);
         var cell = $(this).attr("id")
         var row = parseInt(cell[1])
         var col = parseInt(cell[2])
         if (!myMove) {
             board[row][col] = false;
+            console.log(board);
             myMove = true;
             updateMove();
             makeMove();
@@ -119,10 +121,12 @@ function updateButtons() {
 }
 
 function makeMove() {
-    board = minimaxMove(board);
-    console.log(numNodes);
-    myMove = false;
-    updateMove();
+    setTimeout(function() {
+        board = minimaxMove(board);
+        console.log(numNodes);
+        myMove = false;
+        updateMove();
+    }, 800);
 }
 
 function minimaxMove(board) {
@@ -170,7 +174,5 @@ function recurseMinimax(board, player) {
         return [nextVal, nextBoard];
     }
 }
-
-
 
 updateMove();
