@@ -1,18 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|VT323|Oswald');
+
 .container {
 	margin: 30px auto;
 	height: 500px;
 	width: 500px;
 	border-radius: 100%;
-	background: black;
+	background: #333;
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	box-shadow: 0px 0px 12px #222;
 }
 
 .container-in {
 	position: relative;
-	background: black;
+	background: #333;
 	display: flex;
 	justify-content: center;
 	height: 90%;
@@ -33,7 +36,7 @@
 	height: 200px;
 	width: 200px;
 	border-radius: 100%;
-	background: black;
+	background: #333;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -50,7 +53,7 @@
 	position: absolute;
 	height: 96%;
 	width: 48%;
-	background: green;
+	background: #00a74a;
 	left: 0;
 	border-top-left-radius: 100%;
 }
@@ -59,7 +62,7 @@
 	position: absolute;
 	height: 96%;
 	width: 48%;
-	background: red;
+	background: #9f0f17;
 	right: 0;
 	border-top-right-radius: 100%;
 }
@@ -68,7 +71,7 @@
 	position: absolute;
 	height: 96%;
 	width: 48%;
-	background: yellow;
+	background: #cca707;
 	left: 0%;
 	bottom: 0px;
 	border-bottom-left-radius: 100%;
@@ -78,16 +81,55 @@
 	position: absolute;
 	height: 96%;
 	width: 48%;
-	background: blue;
+	background: #094a8f;
 	right: 0%;
 	bottom: 0px;
 	border-bottom-right-radius: 100%;
+}
+
+.green.light {
+	background: #13ff7c;
+}
+
+.red.light {
+	background: #ff4c4c;
+}
+
+.yellow.light {
+	background: #fed93f;
+}
+
+.blue.light {
+	background: #1c8cff;
 }
 
 .center-part-in {
 	width: 90%;
 	height: 90%;
 	position: absolute;
-	background: white;
 	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	box-shadow: 0 0 0 5px #c0c0c0;
+}
+
+.logo {
+    font-size: 40px;
+    height: 50px;
+    top: 15%;
+    position: absolute;
+    font-family: 'Alfa Slab One';
+    color: #c0c0c0;
+}
+
+.logo span {
+	font-size: 20px;
+	top: -10px;
+	position: relative;
+}
+
+.button-container {
+	height: 10%;
+	width: 80%;
+	background: #c0c0c0;
 }

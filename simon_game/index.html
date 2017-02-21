@@ -3,6 +3,7 @@
 <head>
 	<title>Simon Game</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
@@ -10,16 +11,19 @@
 <div class="container">
 	<div class="container-in">
 		<div class="top-part">
-			<div class="left-side"></div>
-			<div class="right-side"></div>
+			<div class="button left-side" id="green"></div>
+			<div class="button right-side red"></div>
 		</div>
 		<div class="bottom-part">			
-			<div class="left-side"></div>
-			<div class="right-side"></div>
+			<div class="button left-side yellow"></div>
+			<div class="button right-side blue"></div>
 		</div>
 	</div>
 	<div class="center-part">
-		<div class="center-part-in"></div>
+		<div class="center-part-in">
+			<div class="logo">Simon<span>®</span></div>
+			<div class="button-container"></div>
+		</div>
 	</div>
 </div>
 
