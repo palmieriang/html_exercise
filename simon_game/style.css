@@ -1,0 +1,93 @@
+.container {
+	margin: 30px auto;
+	height: 500px;
+	width: 500px;
+	border-radius: 100%;
+	background: black;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container-in {
+	position: relative;
+	background: black;
+	display: flex;
+	justify-content: center;
+	height: 90%;
+	border-radius: 100%;
+	width: 90%;
+	align-items: center;
+}
+
+.top-part {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.center-part {
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	border-radius: 100%;
+	background: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bottom-part {
+	height: 50%;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+}
+
+.top-part .left-side {
+	position: absolute;
+	height: 96%;
+	width: 48%;
+	background: green;
+	left: 0;
+	border-top-left-radius: 100%;
+}
+
+.top-part .right-side {
+	position: absolute;
+	height: 96%;
+	width: 48%;
+	background: red;
+	right: 0;
+	border-top-right-radius: 100%;
+}
+
+.bottom-part .left-side {
+	position: absolute;
+	height: 96%;
+	width: 48%;
+	background: yellow;
+	left: 0%;
+	bottom: 0px;
+	border-bottom-left-radius: 100%;
+}
+
+.bottom-part .right-side {
+	position: absolute;
+	height: 96%;
+	width: 48%;
+	background: blue;
+	right: 0%;
+	bottom: 0px;
+	border-bottom-right-radius: 100%;
+}
+
+.center-part-in {
+	width: 90%;
+	height: 90%;
+	position: absolute;
+	background: white;
+	border-radius: 100%;
+}
