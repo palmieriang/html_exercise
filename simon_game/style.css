@@ -149,7 +149,7 @@
 	display: inline-block;
 }
 
-.count-led {
+.count {
     font-family: 'VT323', monospace;
     color: #DC0D29;
     padding: 0px;
@@ -161,6 +161,14 @@
     border-radius: 10px;
     margin: auto;
     text-align: center;
+}
+
+.led-off{
+  color: #430710;
+}
+
+.led-on{
+  background-color: #DC0D29;
 }
 
 .round-button {
@@ -214,4 +222,17 @@
     background-color: #3193DE;
     position: relative;
     border: 2px solid #333;
+}
+
+.sw-on{
+	left:20px;
+}
+
+.clickable{
+	pointer-events : auto;
+	cursor:pointer;
+}
+
+.unclickable{
+	pointer-events:none;
 }
