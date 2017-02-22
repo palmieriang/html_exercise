@@ -136,6 +136,9 @@ function updateButtons() {
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
             $("#c" + i + "" + j).text(board[i][j] == false ? "x" : board[i][j] == true ? "o" : "");
+            if (board[i][j] == true) {
+                $("#c" + i + "" + j).addClass('notEmpty');
+            }
         }
     }
 }
