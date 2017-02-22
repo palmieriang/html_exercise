@@ -76,13 +76,14 @@ body {
 
 button.startStop {
 	position: absolute;
-	margin-top: 16%;
 	height: 25px;
 	width: 150px;
 	border-radius: 5px;
 	border: 1px solid black;
 	color: red;
 	outline: 0;
+	top: 85%;
+	left: 37.5%;
 }
 
 button.startStop:after {
@@ -147,6 +148,7 @@ button.startStop:after {
 .logo {
 	position: absolute;
 	top: 9%;
+	left: 48.5%;
 }
 
 .support {
