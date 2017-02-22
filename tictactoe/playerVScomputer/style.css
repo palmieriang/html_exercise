@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-@import url('https://fonts.googleapis.com/css?family=Orbitron');
+@import url('https://fonts.googleapis.com/css?family=Lato|VT323|Indie+Flower');
 
 @font-face{
     font-family:'TicTacToe';
@@ -54,6 +52,7 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    max-width: 160px;
 }
 
 .right-side {
@@ -77,11 +76,11 @@ body {
     flex-grow: 1;
     margin: 0;
     border-radius: 4px;
-    font-family: 'Orbitron';
+    font-family: 'VT323';
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 92px;
+    max-width: 57px;
 }
 
 .player {
@@ -110,7 +109,7 @@ body {
 marquee {
     background: black;
     color: red;
-    font-family: 'Orbitron';
+    font-family: 'VT323';
     margin-top: 20px;
     display: flex;
     align-items: center;
