@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|VT323|Oswald');
 
+body {
+    background-image: url('https://i.stack.imgur.com/7YKUD.jpg');
+}
+
 .container {
 	margin: 30px auto;
 	height: 500px;
