@@ -1,5 +1,3 @@
-// br backg by s
-
 $(document).ready(function() {
 
 
@@ -276,14 +274,5 @@ $(document).ready(function() {
 	function getRandomArbitrary(min, max) {
 		return Math.floor(Math.random() * (max - min) + min);
 	}
-
-
-
-
-
-
-
-
-
 
 });
