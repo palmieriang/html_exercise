@@ -9,7 +9,7 @@ body {
 	height: 500px;
 	width: 500px;
 	border-radius: 100%;
-	background: #333;
+	background: linear-gradient(#333, #271c1c);
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -19,7 +19,7 @@ body {
 
 .container-in {
 	position: relative;
-	background: #333;
+	background: linear-gradient(#333, #271c1c);
 	display: flex;
 	justify-content: center;
 	height: 90%;
@@ -40,7 +40,7 @@ body {
 	height: 200px;
 	width: 200px;
 	border-radius: 100%;
-	background: #333;
+	background: linear-gradient(#333, #271c1c);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -135,7 +135,7 @@ body {
 .button-container {
 	height: 54%;
 	width: 98%;
-	background: #c0c0c0;
+	background: linear-gradient(#d4d4d4, #c0c0c0);
 	position: relative;
 	top: 45%;
 	border-radius: 0 0 90px 90px;
@@ -207,11 +207,11 @@ body {
 }
 
 .button-red {
-	background-color : #FC0102;
+	background-color: #FC0102;
 }
 
 .button-yellow {
-	background-color : yellow;
+	background-color: yellow;
 }
 
 .row-last {
@@ -245,7 +245,7 @@ body {
 }
 
 .clickable {
-	pointer-events : auto;
+	pointer-events: auto;
 	cursor: pointer;
 }
 
