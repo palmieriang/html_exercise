@@ -10,7 +10,10 @@ $(document).ready(function() {
 			$('.count').addClass('led-off');			
 			$('.push').removeClass('clickable').addClass('unclickable');
 			$('#start').click(function() {
-				startGame();
+				running = true;
+				if (running) {
+					startGamer();
+				}
 			});
 
 		}else{

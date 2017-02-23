@@ -4,19 +4,19 @@
 	<title>Simon Game</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="script2.js"></script>
 </head>
 <body>
 
 <div class="container">
 	<div class="container-in">
 		<div class="top-part">
-			<div class="button left-side green unclickable" id="3"></div>
-			<div class="button right-side red unclickable" id="2"></div>
+			<div class="push left-side green unclickable" id="0"></div>
+			<div class="push right-side red unclickable" id="1"></div>
 		</div>
 		<div class="bottom-part">
-			<div class="button left-side yellow unclickable" id="1"></div>
-			<div class="button right-side blue unclickable" id="0"></div>
+			<div class="push left-side yellow unclickable" id="2"></div>
+			<div class="push right-side blue unclickable" id="3"></div>
 		</div>
 	</div>
 	<div class="center-part">
@@ -33,7 +33,8 @@
 						<h3 class="label">START</h3>
 					</div>
 					<div class="count-container">
-						<div class="round-button button-yellow clickable" id="mode"></div>
+						<div class="led" id="mode-led"></div>
+						<div class="round-button button-yellow clickable" id="strict"></div>
 						<h3 class="label">STRICT</h3>
 					</div>
 				</div>

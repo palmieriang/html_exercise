@@ -163,11 +163,23 @@
     text-align: center;
 }
 
-.led-off{
+.led {
+	width: 6px;
+	height: 6px;
+	background-color: #32050C;
+	border-radius: 100%;
+	margin: auto;
+	border: 2px solid #222;
+	position: absolute;
+	top: 7%;
+	right: 5%;
+}
+
+.led-off {
   color: #430710;
 }
 
-.led-on{
+.led-on {
   background-color: #DC0D29;
 }
 
@@ -190,11 +202,11 @@
     text-align: center;
 }
 
-.button-red{
+.button-red {
 	background-color : #FC0102;
 }
 
-.button-yellow{
+.button-yellow {
 	background-color : yellow;
 }
 
@@ -224,15 +236,17 @@
     border: 2px solid #333;
 }
 
-.sw-on{
-	left:20px;
+.sw-on {
+	left: 20px;
 }
 
-.clickable{
+.clickable {
 	pointer-events : auto;
-	cursor:pointer;
+	cursor: pointer;
 }
 
-.unclickable{
-	pointer-events:none;
+.unclickable {
+	pointer-events: none;
 }
+
+
