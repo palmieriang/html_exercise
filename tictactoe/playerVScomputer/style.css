@@ -123,6 +123,7 @@ marquee {
 a {
     text-decoration: none;
     color: red;
+    width: 300px;
 }
 
 input#restart {
