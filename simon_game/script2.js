@@ -16,29 +16,6 @@ $(document).ready(function() {
 	var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 	var wrongAns = new Audio('http://scottemcwilliams.com/imagedep/242503__gabrielaraujo__failure-wrong-action.wav');
 
-	// $('#pwr-sw').on('click', function() {
-
-	// 	$('#pwr-sw').toggleClass('sw-on');
-	// 	if (running) {
-	// 		console.log(1);
-	// 		running = false;
-	// 		$('#pwr-sw').removeClass('sw-on');
-	// 		$('.count').addClass('led-off');
-	// 		seqArray = [];
-	// 		i = 0;
-	// 		if (interval) {
-	// 			clearInterval(interval);
-	// 			interval = null;
-	// 		}
-	// 	} else {
-	// 		console.log(2);
-	// 		running = true;
-	// 		startButton();
-	// 		$('.count').removeClass('led-off');
-	// 		$('.count').text('--');
-	// 	}
-	// });
-
 	$('#pwr-sw').on('click', function() {
 		$('#pwr-sw').toggleClass('sw-on');
 		if(running) {
