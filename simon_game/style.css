@@ -33,6 +33,7 @@ body {
     width: 100%;
     position: absolute;
     top: 0;
+    left: 0;
 }
 
 .center-part {
@@ -44,6 +45,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	top: 30%;
+	left: 30.4%;
 }
 
 .bottom-part {
@@ -51,6 +54,7 @@ body {
 	width: 100%;
 	position: absolute;
 	bottom: 0px;
+	left: 0;
 }
 
 .top-part .left-side {
@@ -115,6 +119,8 @@ body {
 	display: flex;
 	justify-content: center;
 	box-shadow: 0 0 0 2px #c0c0c0;
+	top: 5%;
+	left: 5%;
 }
 
 .logo {
@@ -124,6 +130,7 @@ body {
     position: absolute;
     font-family: 'Alfa Slab One';
     color: #c0c0c0;
+    left: 8.5%;
 }
 
 .logo span {
