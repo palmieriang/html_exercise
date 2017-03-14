@@ -384,6 +384,7 @@
 		</div>
 
 		<div class="example" ng-controller="myController15">
+			<p>Lesson 15</p>
 			<input type="checkbox" ng-model="hideSalary">Hide salary
 <!-- 		at beginning tha variable hidesalary will not be available on the $scope object (undefined) it means false. ng-hide=false, the hide element will be visible. ng-show=false the element will not be visible. -->
 			<br />
@@ -437,6 +438,7 @@
 <!-- Lesson 16 -->
 <!-- it works on Firefox but it doesn't work on Chrome -->
 		<div class="example" ng-controller="myController16">
+			<p>Lesson 16</p>
 			Select view:
 			<select ng-model="employeeView">
 				<option value="employeeTable.html">Table</option>
@@ -445,7 +447,33 @@
 			<br />
 			<div ng-include="employeeView"></div>
 		</div>
-	</div>
+<!-- Lesson 17 -->
+<!-- This exercise require a database table and shows how to use and manipulate it -->
+<!-- It use the same table used before, ID, Name, Gender, Salary, but it is saved in the database -->
+		<div class="example" ng-controller="myController17">
+			<p>Lesson 17</p>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Gender</th>
+						<th>Salary</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>{{ employee.id }}</td>
+						<td>{{ employee.name }}</td>
+						<td>{{ employee.gender }}</td>
+						<td>{{ employee.salary }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
+
+
+	</div>
 </body>
 </html>

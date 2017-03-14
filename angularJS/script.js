@@ -312,7 +312,13 @@ myApp.controller("myController16", function($scope) {
 	// quindi se uso una proprietà in $scope uso solo " ", se voglio usare un nome del file uso "' '"
 });
 
-
+myApp.controller("myController17", function($scope, $http) {
+	$http.post('nameService.asmx/nameFunction')
+		// To use get instead of post we have to add one configuration section within our web.configuration file 
+		.then(function(response) {
+			$scope.employees = response.data;
+		});
+});
 
 
 
