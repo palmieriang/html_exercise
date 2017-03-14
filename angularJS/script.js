@@ -320,5 +320,22 @@ myApp.controller("myController17", function($scope, $http) {
 		});
 });
 
+myApp.controller("myController18", function($scope, $http, $log) {
+	$http({
+		method: 'GET',
+		url: 'nameService.asmx/nameFunction'
+	}).then(function(response) {
+			$scope.employees = response.data;
+			$log.info(response);
+		});
+});
 
-
+	// http service returns a promise object
+	// $scope.employees = $http.get('nameService.asmx/nameFunction');
+	// better method:
+	// $scope.employees = $http.get('nameService.asmx/nameFunction')
+	// 						.then(function(response) {
+	// 							$scope.employees = response.data;
+	// 							$log.info(response);
+	// 						});
+	// to use $log it has to be injected in the function($scope, $http, $log)
