@@ -321,13 +321,19 @@ myApp.controller("myController17", function($scope, $http) {
 });
 
 myApp.controller("myController18", function($scope, $http, $log) {
+
+	var successCallBack = function(response) {
+		$scope.employees = response.data;
+	};
+
+	var errorCallBack = function() {
+		$scope.error = response.data;
+	}
+
 	$http({
 		method: 'GET',
-		url: 'nameService.asmx/nameFunction'
-	}).then(function(response) {
-			$scope.employees = response.data;
-			$log.info(response);
-		});
+		url: 'nameService.asmx/getAllEmployees'
+	}).then(successCallBack, errorCallBack);
 });
 
 	// http service returns a promise object
