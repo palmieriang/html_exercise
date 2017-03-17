@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html ng-app="myModule">
 <head>
-	<title></title>
+    <meta charset="utf-8">
+	<title>AngularJS lessons</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
 	<script src="script.js"></script>
+	<script src="stringService.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -450,7 +452,7 @@
 <!-- Lesson 17 -->
 <!-- This exercise require a database table and shows how to use and manipulate it -->
 <!-- It use the same table used before, ID, Name, Gender, Salary, but it is saved in the database -->
-		<div class="example" ng-controller="myController17">
+<!-- 		<div class="example" ng-controller="myController17">
 			<p>Lesson 17</p>
 			<table>
 				<thead>
@@ -470,14 +472,13 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
+		</div> -->
 <!-- Lesson 18 -->
 <!-- This exercise require a database table and shows how to use and manipulate it -->
 <!-- It use the same table used before, ID, Name, Gender, Salary, but it is saved in the database -->
-		<div class="example" ng-controller="myController17">
-			<p>Lesson 17</p>
+<!-- 		<div class="example" ng-controller="myController18">
+			<p>Lesson 18</p>
 			{{ error }}
-			<br />
 			<table>
 				<thead>
 					<tr>
@@ -496,37 +497,47 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
+		</div> -->
 <!-- Lesson 19 -->
 <!-- Service in Angular -->
 
 <!-- Lesson 20 -->
-<!-- This exercise require a database table and shows how to use and manipulate it -->
-<!-- It use the same table used before, ID, Name, Gender, Salary, but it is saved in the database -->
-		<div class="example" ng-controller="myController17">
-			<p>Lesson 17</p>
-			{{ error }}
-			<br />
+<!-- Create custom service -->
+		<div class="example" ng-controller="myController20">
+			<p>Lesson 20</p>
 			<table>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Name</th>
-						<th>Gender</th>
-						<th>Salary</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="employee in employees">
-						<td>{{ employee.id }}</td>
-						<td>{{ employee.name }}</td>
-						<td>{{ employee.gender }}</td>
-						<td>{{ employee.salary }}</td>
-					</tr>
-				</tbody>
+				<tr>
+					<td>Your string</td>
+					<td><input type="text" ng-model="input"></td>
+				</tr>
+				<tr>
+					<td>Result</td>
+					<td><input type="text" name="text" ng-model="output"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="button" ng-click="transformString(input)" value="Process String"></td>
+				</tr>
 			</table>
 		</div>
 
+<!-- 		<div class="example" ng-controller="myController20B">
+			<p>Lesson 20</p>
+			<table>
+				<tr>
+					<td>Your string</td>
+					<td><input type="text" ng-model="input"></td>
+				</tr>
+				<tr>
+					<td>Result</td>
+					<td><input type="text" name="text" ng-model="output"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="button" ng-click="transformString(input)" value="Process String"></td>
+				</tr>
+			</table>
+		</div> -->
 
 	</div>
 </body>

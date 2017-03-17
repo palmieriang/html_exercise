@@ -312,29 +312,29 @@ myApp.controller("myController16", function($scope) {
 	// quindi se uso una proprietà in $scope uso solo " ", se voglio usare un nome del file uso "' '"
 });
 
-myApp.controller("myController17", function($scope, $http) {
-	$http.post('nameService.asmx/nameFunction')
-		// To use get instead of post we have to add one configuration section within our web.configuration file 
-		.then(function(response) {
-			$scope.employees = response.data;
-		});
-});
+// myApp.controller("myController17", function($scope, $http) {
+// 	$http.post('nameService.asmx/nameFunction')
+// 		// To use get instead of post we have to add one configuration section within our web.configuration file 
+// 		.then(function(response) {
+// 			$scope.employees = response.data;
+// 		});
+// });
 
-myApp.controller("myController18", function($scope, $http, $log) {
+// myApp.controller("myController18", function($scope, $http, $log) {
 
-	var successCallBack = function(response) {
-		$scope.employees = response.data;
-	};
+// 	var successCallBack = function(response) {
+// 		$scope.employees = response.data;
+// 	};
 
-	var errorCallBack = function() {
-		$scope.error = response.data;
-	}
+// 	var errorCallBack = function() {
+// 		$scope.error = response.data;
+// 	}
 
-	$http({
-		method: 'GET',
-		url: 'nameService.asmx/getAllEmployees'
-	}).then(successCallBack, errorCallBack);
-});
+// 	$http({
+// 		method: 'GET',
+// 		url: 'nameService.asmx/getAllEmployees'
+// 	}).then(successCallBack, errorCallBack);
+// });
 
 	// http service returns a promise object
 	// $scope.employees = $http.get('nameService.asmx/nameFunction');
@@ -345,3 +345,43 @@ myApp.controller("myController18", function($scope, $http, $log) {
 	// 							$log.info(response);
 	// 						});
 	// to use $log it has to be injected in the function($scope, $http, $log)
+
+myApp.controller("myController20", function($scope) {
+	$scope.transformString = function(input) {
+		
+		if (!input) {
+			return input;
+		}
+
+		var output = "";
+
+		for(var i=0; i<input.length; i++) {
+			if(i > 0 && input[i] == input[i].toUpperCase()) {
+				output = output + " ";
+			}
+			output = output + input[i];
+		}
+
+		$scope.output = output;
+	}
+});
+
+myApp.controller("myController20B", function($scope, $stringService) {
+	$scope.transformString = function(input) {
+
+		$scope.output = output;
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
