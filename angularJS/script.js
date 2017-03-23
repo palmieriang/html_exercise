@@ -373,7 +373,13 @@ myApp.controller("myController20B", function($scope, stringService) {
 	}
 });
 
-
+myApp.controller("myController21", function($scope, $location, $anchorScroll) {
+	$scope.scrollTo = function(scrollLocation) {
+		$location.hash(scrollLocation);
+		$anchorScroll.yOffset = 40;
+		$anchorScroll();
+	}
+});
 
 
 
