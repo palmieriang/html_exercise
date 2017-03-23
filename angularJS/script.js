@@ -366,10 +366,10 @@ myApp.controller("myController20", function($scope) {
 	}
 });
 
-myApp.controller("myController20B", function($scope, $stringService) {
+myApp.controller("myController20B", function($scope, stringService) {
 	$scope.transformString = function(input) {
 
-		$scope.output = output;
+		$scope.output = stringService.processString(input);
 	}
 });
 
