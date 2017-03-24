@@ -381,7 +381,9 @@ myApp.controller("myController21", function($scope, $location, $anchorScroll) {
 	}
 });
 
-
+myApp.controller("myController22", function($scope) {
+	
+});
 
 
 
