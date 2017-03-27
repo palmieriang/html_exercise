@@ -381,8 +381,15 @@ myApp.controller("myController21", function($scope, $location, $anchorScroll) {
 	}
 });
 
-myApp.controller("myController22", function($scope) {
-	
+myApp.controller("myController22", function($scope, $http, $location, $anchorScroll) {
+	$http.get('CountryService.asmx/GetData')
+		.then(function (response) {
+			$scope.countries = response.data;
+		});
+	$scope.scrollTo = function(countryName) {
+		$location.hash(countryName);
+		$anchorScroll();
+	}
 });
 
 

@@ -555,7 +555,20 @@
 <!-- $anchorscroll service with database data -->
 		<div class="example" ng-controller="myController22">
 			<p>Lesson 22</p>
-			<div></div>
+			<span ng-repeat="country in countries">
+				<button ng-click="scrollTo(country.Name)">{{country.Name}}</button>
+			</span>
+			<br />
+			<div class="table-lesson22">
+				<fieldset ng-repeat="country in countries" id="{{country.Name}}">
+					<legend>{{country.Name}}</legend>
+					<ul>
+						<li ng-repeat="city in country.City">
+							{{city.Name}}
+						</li>
+					</ul>
+				</fieldset>
+			</div>
 		</div>
 
 
