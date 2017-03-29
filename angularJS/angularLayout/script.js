@@ -20,10 +20,13 @@ var app = angular.module("Demo", ["ngRoute"])
 				 .controller("coursesController", function($scope) {
 				 	$scope.courses = ["C#", "VB.NET", "SQL Server", "ASP.NET"];
 				 })
-				 .controller("studentsController", function($scope, $http) {
-				 	$http.get("StudentService.asmx/GetAllStudents")
-				 		 .then(function(response) {
-							$scope.students = response.data;
-				 		 })
+				 // .controller("studentsController", function($scope, $http) {
+				 // 	$http.get("StudentService.asmx/GetAllStudents")
+				 // 		 .then(function(response) {
+					// 		$scope.students = response.data;
+				 // 		 })
+				 // })
+				 .controller("studentsController", function($scope) {
+				 	$scope.message = "Students Page";
 				 })
 
