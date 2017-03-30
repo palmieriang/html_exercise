@@ -1,5 +1,5 @@
 var app = angular.module("Demo", ["ngRoute"])
-				 .config(function($routeProvider) {
+				 .config(function($routeProvider, $locationProvider) {
 				 	$routeProvider
 				 		.when("/home", {
 				 			templateUrl: "templates/home.html",
@@ -13,6 +13,7 @@ var app = angular.module("Demo", ["ngRoute"])
 				 			templateUrl: "templates/students.html",
 				 			controller: "studentsController"
 				 		})
+				 		$locationProvider.html5Mode(true);
 				 })
 				 .controller("homeController", function($scope) {
 				 	$scope.message = "Home Page";
