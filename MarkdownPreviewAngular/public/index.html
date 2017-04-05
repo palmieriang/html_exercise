@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="utf-8">
+	<title>Markdown Previewer AngularJS</title>
+	<!-- AngularJS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.4/angular-sanitize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.4/showdown.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Markdown -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+	<!-- Script -->
+	<script src="script.js"></script>
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body ng-controller="myController">
+
+<div class="row">
+	<div class="col-md-6">
+		<h1>Markdown</h1>
+		<textarea ng-model="snippet" cols="60" rows="10"></textarea>
+	</div>
+	<div class="col-md-6">
+		<h1>Preview</h1>
+		<div class="screen" ng-bind-html="snippet"></div>
+<!-- 		<div class="screen">
+			{{ snippet | markdown }}
+		</div> -->
+	</div>
+</div>
+
+</body>
+</html>
