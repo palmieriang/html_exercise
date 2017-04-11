@@ -313,7 +313,7 @@ myApp.controller("myController16", function($scope) {
 });
 
 myApp.controller("myController17", function($scope, $http) {
-	$http.get('http://localhost/exercises/test.php')
+	$http.get('http://localhost/exercises/3connectAngularJS/test.php')
 		// To use get instead of post we have to add one configuration section within our web.configuration file 
 		.then(function(response) {
 			console.log(response.data);
@@ -321,21 +321,21 @@ myApp.controller("myController17", function($scope, $http) {
 		});
 });
 
-// myApp.controller("myController18", function($scope, $http, $log) {
+myApp.controller("myController18", function($scope, $http, $log) {
 
-// 	var successCallBack = function(response) {
-// 		$scope.employees = response.data;
-// 	};
+	var successCallBack = function(response) {
+		$scope.employees = response.data;
+	};
 
-// 	var errorCallBack = function() {
-// 		$scope.error = response.data;
-// 	}
+	var errorCallBack = function() {
+		$scope.error = response.data;
+	}
 
-// 	$http({
-// 		method: 'GET',
-// 		url: 'nameService.asmx/getAllEmployees'
-// 	}).then(successCallBack, errorCallBack);
-// });
+	$http({
+		method: 'GET',
+		url: 'http://localhost/exercises/3connectAngularJS/test.php'
+	}).then(successCallBack, errorCallBack);
+});
 
 	// http service returns a promise object
 	// $scope.employees = $http.get('nameService.asmx/nameFunction');
