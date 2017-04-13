@@ -316,7 +316,7 @@ myApp.controller("myController17", function($scope, $http) {
 	$http.get('http://localhost/exercises/3connectAngularJS/test.php')
 		// To use get instead of post we have to add one configuration section within our web.configuration file 
 		.then(function(response) {
-			console.log(response.data);
+			// console.log(response.data);
 			$scope.employees = response.data;
 		});
 });
