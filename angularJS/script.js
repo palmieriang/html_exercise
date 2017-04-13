@@ -383,8 +383,9 @@ myApp.controller("myController21", function($scope, $location, $anchorScroll) {
 });
 
 myApp.controller("myController22", function($scope, $http, $location, $anchorScroll) {
-	$http.get('CountryService.asmx/GetData')
+	$http.get('http://localhost/exercises/lesson22.php')
 		.then(function (response) {
+			console.log(response.data);
 			$scope.countries = response.data;
 		});
 	$scope.scrollTo = function(countryName) {
