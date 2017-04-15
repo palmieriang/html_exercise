@@ -558,20 +558,22 @@
 		<div class="example" ng-controller="myController22">
 			<p>Lesson 22</p>
 			<span ng-repeat="country in countries">
-				<button ng-click="scrollTo(country.Name)">{{country.Name}}</button>
+				<button ng-click="scrollTo(country.name)">{{country.name}}</button>
 			</span>
 			<br />
 			<div class="table-lesson22">
-				<fieldset ng-repeat="country in countries" id="{{country.Name}}">
-					<legend>{{country.Name}}</legend>
+				<fieldset ng-repeat="country in countries" id="{{country.name}}">
+					<legend>{{country.name}}</legend>
 					<ul>
-						<li ng-repeat="city in country.City">
-							{{city.Name}}
+						<li ng-repeat="city in countries.city">
+							{{city.name}}
 						</li>
 					</ul>
 				</fieldset>
 			</div>
 		</div>
+
+
 <!-- Lesson 23 -->
 <!-- routing tutorial -->
 

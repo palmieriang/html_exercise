@@ -385,8 +385,8 @@ myApp.controller("myController21", function($scope, $location, $anchorScroll) {
 myApp.controller("myController22", function($scope, $http, $location, $anchorScroll) {
 	$http.get('http://localhost/exercises/lesson22.php')
 		.then(function (response) {
-			console.log(response.data);
-			$scope.countries = response.data;
+			$scope.list = response.data;
+			console.log($scope.list.country);
 		});
 	$scope.scrollTo = function(countryName) {
 		$location.hash(countryName);
