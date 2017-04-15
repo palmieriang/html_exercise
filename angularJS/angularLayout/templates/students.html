@@ -1,3 +1,5 @@
 <!-- http://csharp-video-tutorials.blogspot.co.uk/2016/02/angularjs-partial-templates.html -->
 <h1>List of Students</h1>
-<h1>{{message}}</h1>
+<ul>
+	<li ng-repeat="student in students">{{student.name}}</li>
+</ul>
