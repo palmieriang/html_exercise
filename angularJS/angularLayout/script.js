@@ -13,10 +13,14 @@ var app = angular.module("Demo", ["ngRoute"])
 				 			templateUrl: "templates/students.html",
 				 			controller: "studentsController"
 				 		})
+				 		.when("/students/:ID", {
+				 			templateUrl: "templates/studentDetails.html",
+				 			controller: "studentDetailsController"
+				 		})
 				 		.otherwise({
 				 			redirectTo: "/home"
 				 		})
-				 	$locationProvider.html5Mode(true);
+			 		$locationProvider.html5Mode(true);
 				 })
 				 .controller("homeController", function($scope) {
 				 	$scope.message = "Home Page";
@@ -30,3 +34,12 @@ var app = angular.module("Demo", ["ngRoute"])
 							$scope.students = response.data;
 				 		 })
 				 })
+	            .controller("studentDetailsController", function ($scope, $http, $routeParams) {
+	                $http({
+	                    url: "http://localhost/exercises/lesson25.php",
+	                    method: "get",
+	                    params: { id: $routeParams.id }
+	                }).then(function (response) {
+	                    $scope.student = response.data;
+	                })
+	            })
