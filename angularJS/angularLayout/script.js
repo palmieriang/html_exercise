@@ -34,12 +34,20 @@ var app = angular.module("Demo", ["ngRoute"])
 							$scope.students = response.data;
 				 		 })
 				 })
+	            // .controller("studentDetailsController", function ($scope, $http, $routeParams) {
+	            //     $http({
+	            //         url: "http://localhost/exercises/lesson30.php",
+	            //         method: "get",
+	            //         params: { ID: $routeParams.ID }
+	            //     }).then(function (response) {
+	            //         $scope.student = response.data;
+	            //     })
+	            // })
 	            .controller("studentDetailsController", function ($scope, $http, $routeParams) {
-	                $http({
-	                    url: "http://localhost/exercises/lesson25.php",
-	                    method: "get",
-	                    params: { id: $routeParams.id }
-	                }).then(function (response) {
-	                    $scope.student = response.data;
-	                })
+	            	console.log($routeParams.ID);
+	            	$http.get("http://localhost/exercises/angularLayout/lesson30.php?ID="+$routeParams.ID)
+				 		 .then(function(response) {
+	                	console.log(response);
+							$scope.student = response.data[0];
+				 		 })
 	            })
