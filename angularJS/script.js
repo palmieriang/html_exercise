@@ -394,7 +394,30 @@ myApp.controller("myController22", function($scope, $http, $location, $anchorScr
 	}
 });
 
+myApp.controller("myController23", function($scope) {
+	$scope.name = "Controller numero 23";
+}); 
 
+myApp.controller("myController24", function($scope) {
+	$scope.name = "Controller numero 24";
+}); 
+
+myApp.controller("myController25", function($scope) {
+	$scope.name = "Controller numero 25";
+}); 
+
+myApp.controller("myController26", function() {
+	this.name = "Controller numero 26";
+}); 
+
+myApp.controller("myController27", function() {
+	// we don't need scope anymore, but we can leave it for other purpose
+	this.name = "Controller numero 27";
+}); 
+
+myApp.controller("myController28", function() {
+	this.name = "Controller numero 28";
+}); 
 
 
 

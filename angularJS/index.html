@@ -604,6 +604,34 @@
 <!-- Lesson 32 -->
 <!-- Controller as syntax -->
 
+<!-- Lesson 33 -->
+<!-- nested scopes and controller as syntax -->
+		<div class="example">
+			<p>Lesson 33</p>
+			<div ng-controller="myController23">
+				{{name}}
+				<div ng-controller="myController24">
+					{{$parent.name}} - {{name}}
+					<div ng-controller="myController25">
+						{{$parent.$parent.name}} - {{$parent.name}} - {{name}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- If there are more controller, instead of $parent.$parent.$parent.... we can use as syntax -->
+		<div class="example">
+			<p>Lesson 33 B</p>
+			<div ng-controller="myController26 as New26">
+				{{New26.name}}
+				<div ng-controller="myController27 as New27">
+					{{New26.name}} - {{New27.name}}
+					<div ng-controller="myController28 as New28">
+						{{New26.name}} - {{New27.name}} - {{New28.name}}
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </body>
 </html>
