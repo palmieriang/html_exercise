@@ -29,7 +29,11 @@ var app = angular.module("Demo", ["ngRoute"])
 				 .controller("coursesController", function($scope) {
 				 	$scope.courses = ["C#", "VB.NET", "SQL Server", "ASP.NET"];
 				 })
-				 .controller("studentsController", function($scope, $http) {
+				 .controller("studentsController", function($scope, $http, $route) {
+				 	var vm = this;
+				 	vm.reloadData = function() {
+				 		$route.reload();
+				 	}
 				 	$http.get("http://localhost/exercises/lesson25.php")
 				 		 .then(function(response) {
 							$scope.students = response.data;
