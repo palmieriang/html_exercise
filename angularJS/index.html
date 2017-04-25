@@ -642,17 +642,29 @@
 
 <!-- Lesson 37 -->
 <!-- Difference between $scope and $rootScope -->
-		<div ng-controller="myController29">
-			rootScope Colour: {{rootScopeColour}} <br />
-			Red Colour Controller: {{redColour}} <br />
-			Green Colour Controller: {{greenColour}}
+		<div class="example">
+			<p>Lesson 37</p>
+			<div ng-controller="myController29">
+				rootScope Colour: {{rootScopeColour}} <br />
+				Red Colour Controller: {{redColour}} <br />
+				Green Colour Controller: {{greenColour}}
+					<span style="color: red" ng-show="greenColour == undefined">
+						greenColour is undefined
+					</span>
+			</div>
+			<br />
+			<div ng-controller="myController30">
+				rootScope Colour: {{rootScopeColour}} <br />
+				Green Colour Controller: {{greenColour}} <br />
+				Red Colour Controller: {{redColour}}
+					<span style="color: red" ng-show="redColour == undefined">
+						redColour is undefined
+					</span>
+			</div>
 		</div>
-		<br />
-		<div ng-controller="myController30">
-			rootScope Colour: {{rootScopeColour}} <br />
-			Green Colour Controller: {{greenColour}} <br />
-			Red Colour Controller: {{redColour}}
-		</div>
+<!-- Lesson 38 -->
+<!-- Cancel route change -->
+
 
 	</div>
 </body>

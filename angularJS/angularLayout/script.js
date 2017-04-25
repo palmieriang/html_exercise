@@ -30,6 +30,16 @@ var app = angular.module("Demo", ["ngRoute"])
 				 	$scope.courses = ["C#", "VB.NET", "SQL Server", "ASP.NET"];
 				 })
 				 .controller("studentsController", function($scope, $http, $route) {
+				 	// $scope.$on("$routeChangeStart", function(event, next, current) {
+				 	// 	if(!confirm("Are you sure you want to navigate away from this page to " + next.$$route.originalPath)) {
+				 	// 		event.preventDefault();
+				 	// 	};
+				 	// });
+				 	$scope.$on("$locationChangeStart", function(event, next, current) {
+				 		if(!confirm("Are you sure you want to navigate away from this page to " + next)) {
+				 			event.preventDefault();
+				 		};
+				 	});
 				 	var vm = this;
 				 	vm.reloadData = function() {
 				 		$route.reload();
