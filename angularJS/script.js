@@ -419,6 +419,14 @@ myApp.controller("myController28", function() {
 	this.name = "Controller numero 28";
 }); 
 
+myApp.controller("myController29", function($scope, $rootScope) {
+	$scope.redColour = "I am red color";
+	$rootScope.rootScopeColour = "I am a rootScope colour";
+}); 
+
+myApp.controller("myController30", function($scope) {
+	$scope.greenColour = "I am green color";
+}); 
 
 
 
