@@ -80,3 +80,20 @@ var app = angular.module("Demo", ["ngRoute"])
 							$scope.student = response.data[0];
 				 		 })
 	            })
+	            .controller("studentsSearchController", function ($scope, $http, $routeParams) {
+	            	if($routeParams.name) {
+					console.log($routeParams.name);
+					$http.get("http://localhost/exercises/angularLayoutLesson32/lesson40.php?name="+$routeParams.name)
+							 .then(function(response) {
+								console.log(response);
+								console.log(response.data);
+								$scope.students = response.data;
+							 })
+					} else {
+					 	$http.get("http://localhost/exercises/angularLayoutLesson32/lesson25.php")
+					 		 .then(function(response) {
+								$scope.students = response.data;
+					 		 })
+
+					}
+	            })	            
