@@ -18,6 +18,14 @@ var app = angular.module("Demo", ["ngRoute"])
 				 			templateUrl: "templates/studentDetails.html",
 				 			controller: "studentDetailsController"
 				 		})
+				 		.when("/studentsSearch/", {
+				 			templateUrl: "exercises/angularLayout/templates/studentsSearch.html",
+				 			controller: "studentsSearchController"
+				 		})
+				 		.when("/test", {
+				 			template: "<h1>Inline template in action</h1>",
+				 			controller: "homeController"
+				 		})
 				 		.otherwise({
 				 			redirectTo: "/home"
 				 		})
@@ -29,7 +37,7 @@ var app = angular.module("Demo", ["ngRoute"])
 				 .controller("coursesController", function($scope) {
 				 	$scope.courses = ["C#", "VB.NET", "SQL Server", "ASP.NET"];
 				 })
-				 .controller("studentsController", function($scope, $http, $route) {
+				 .controller("studentsController", function($scope, $http, $route, $rootScope, $log, $routeParams, $location) {
 				 	// Using $routeChangeStart
 				 	// $scope.$on("$routeChangeStart", function(event, next, current) {
 				 	// 	if(!confirm("Are you sure you want to navigate away from this page to " + next.$$route.originalPath)) {
@@ -42,26 +50,55 @@ var app = angular.module("Demo", ["ngRoute"])
 				 	// 		event.preventDefault();
 				 	// 	};
 				 	// });
-					$scope.$on("$locationChangeStart", function (event, next, current) {
-					        $log.debug("$locationChangeStart fired");
-					        $log.debug(event);
-					        $log.debug(next);
-					        $log.debug(current);
-					    });
-				    $scope.$on("$routeChangeStart", function (event, next, current) {
-				        $log.debug("$routeChangeStart fired");
-					        $log.debug(event);
-					        $log.debug(next);
-					        $log.debug(current);
+					// $scope.$on("$locationChangeStart", function (event, next, current) {
+					// 	$log.debug("$locationChangeStart fired");
+					// 	$log.debug(event);
+					// 	$log.debug(next);
+					// 	$log.debug(current);
+					// });
+
+					// $scope.$on("$routeChangeStart", function (event, next, current) {
+					// 	$log.debug("$routeChangeStart fired");
+					// 	$log.debug(event);
+					// 	$log.debug(next);
+					// 	$log.debug(current);
+					// });
+
+				 	// var vm = this;
+
+					$rootScope.$on("$locationChangeStart", function () {
+				        $log.debug("$locationChangeStart fired");
 				    });
-				 	var vm = this;
-				 	vm.reloadData = function() {
+
+				    $rootScope.$on("$routeChangeStart", function () {
+				        $log.debug("$routeChangeStart fired");
+				    });
+
+				    $rootScope.$on("$locationChangeSuccess", function () {
+				        $log.debug("$locationChangeSuccess fired");
+				    });
+
+				    $rootScope.$on("$routeChangeSuccess", function () {
+				        $log.debug("$routeChangeSuccess fired");
+				    });
+				 	$scope.reloadData = function() {
 				 		$route.reload();
 				 	}
-				 	$http.get("http://localhost/exercises/lesson25.php")
+				 	$http.get("http://localhost/exercises/angularLayout/lesson25.php")
 				 		 .then(function(response) {
 							$scope.students = response.data;
 				 		 })
+				 	$scope.searchStudent = function(name) {
+				 		if($scope.name) {
+				 			$location.url("/studentsSearch/" + $scope.name);
+				 		} else {
+				 			$location.url("/studentsSearch");
+				 		}
+				 		$http.get("http://localhost/exercises/angularLayoutLesson32/lesson40.php?name="+$routeParams.name)
+				 		 .then(function(response) {
+							$scope.students = response.data;
+				 		 })
+				 	}
 				 })
 	            // .controller("studentDetailsController", function ($scope, $http, $routeParams) {
 	            //     $http({
