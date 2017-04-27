@@ -119,18 +119,19 @@ var app = angular.module("Demo", ["ngRoute"])
 	            })
 	            .controller("studentsSearchController", function ($scope, $http, $routeParams) {
 	            	if($routeParams.name) {
-					console.log($routeParams.name);
-					$http.get("http://localhost/exercises/angularLayoutLesson32/lesson40.php?name="+$routeParams.name)
-							 .then(function(response) {
-								console.log(response);
-								console.log(response.data);
-								$scope.students = response.data;
-							 })
-					} else {
-					 	$http.get("http://localhost/exercises/angularLayoutLesson32/lesson25.php")
-					 		 .then(function(response) {
-								$scope.students = response.data;
-					 		 })
-
-					}
-	            })	            
+				        $http({
+				            url: "http://localhost/exercises/angularLayout/lesson40.php",
+				            method: "get",
+				            params: { name: $routeParams.name }
+				        }).then(function (response) {
+				        	console.log(response.data);
+				            $scope.students = response.data;
+				        })
+				    } else {
+				        $http.get("http://localhost/exercises/angularLayout/lesson25.php")
+								.then(function (response) {
+								    $scope.students = response.data;
+						        	console.log($scope.students);
+								})
+				    }
+	            })
