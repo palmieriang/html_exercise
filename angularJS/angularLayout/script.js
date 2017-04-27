@@ -18,7 +18,7 @@ var app = angular.module("Demo", ["ngRoute"])
 				 			templateUrl: "templates/studentDetails.html",
 				 			controller: "studentDetailsController"
 				 		})
-				 		.when("/studentsSearch/", {
+				 		.when("/studentsSearch/:name?", {
 				 			templateUrl: "exercises/angularLayout/templates/studentsSearch.html",
 				 			controller: "studentsSearchController"
 				 		})
