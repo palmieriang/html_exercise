@@ -11,8 +11,16 @@ var app = angular.module("Demo", ["ngRoute"])
 				 			controller: "coursesController"
 				 		})
 				 		.when("/students", {
-				 			templateUrl: "templates/students.html",
-				 			controller: "studentsController"
+				 			templateUrl: "exercises/angularLayout/templates/students.html",
+				 			controller: "studentsController",
+				 			resolve: {
+				 				studentsList: function($http) {
+								 	return $http.get("http://localhost/exercises/angularLayout/lesson25.php")
+								 			.then(function(response) {
+												return response.data;
+							 				})				 					
+				 				}
+				 			}
 				 		})
 				 		.when("/students/:ID", {
 				 			templateUrl: "templates/studentDetails.html",
@@ -37,7 +45,7 @@ var app = angular.module("Demo", ["ngRoute"])
 				 .controller("coursesController", function($scope) {
 				 	$scope.courses = ["C#", "VB.NET", "SQL Server", "ASP.NET"];
 				 })
-				 .controller("studentsController", function($scope, $http, $route, $rootScope, $log, $routeParams, $location) {
+				 .controller("studentsController", function(studentsList, $scope, $http, $route, $rootScope, $log, $routeParams, $location) {
 				 	// Using $routeChangeStart
 				 	// $scope.$on("$routeChangeStart", function(event, next, current) {
 				 	// 	if(!confirm("Are you sure you want to navigate away from this page to " + next.$$route.originalPath)) {
@@ -81,13 +89,19 @@ var app = angular.module("Demo", ["ngRoute"])
 				    $rootScope.$on("$routeChangeSuccess", function () {
 				        $log.debug("$routeChangeSuccess fired");
 				    });
+
 				 	$scope.reloadData = function() {
 				 		$route.reload();
 				 	}
-				 	$http.get("http://localhost/exercises/angularLayout/lesson25.php")
-				 		 .then(function(response) {
-							$scope.students = response.data;
-				 		 })
+
+				 	// adding the query in the routeProvider, we don't need it anymore here but we have to inject the property name (studentsList) in this controller end we can remove $http
+				 	// $http.get("http://localhost/exercises/angularLayout/lesson25.php")
+				 	// 	 .then(function(response) {
+						// 	$scope.students = response.data;
+				 	// 	 })
+
+				 	$scope.students = studentsList;
+
 				 	$scope.searchStudent = function(name) {
 				 		if($scope.name) {
 				 			$location.url("/studentsSearch/" + $scope.name);
