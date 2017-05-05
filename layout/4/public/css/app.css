@@ -23,4 +23,17 @@ body {
     text-decoration: none;
     padding: 10px; }
 
+.pageOne {
+  height: 900px;
+  background-image: url(https://static.wixstatic.com/media/84770f_baaa1e587d314769b1581cc2e0932b53.jpg/v1/fill/w_1079,h_1093,al_c,q_85/84770f_baaa1e587d314769b1581cc2e0932b53.webp);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.pageTwo {
+  height: 900px;
+  background-color: #4a4c67; }
+
 /*# sourceMappingURL=app.css.map */
