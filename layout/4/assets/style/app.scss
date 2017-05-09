@@ -1,13 +1,14 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-family: helvetica;
+	font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
 
 	background-color: white;
-	height: 80px;
+	height: 60px;
 	color: darkgrey;
 	display: flex;
 	justify-content: space-around;
@@ -42,6 +43,15 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main-title {
+		color: white;
+		font-size: 7vw;
+		text-align: center;
+    }
 }
 
 .pageTwo {
