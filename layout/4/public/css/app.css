@@ -11,7 +11,10 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 18px; }
+  font-size: 18px;
+  position: fixed;
+  top: 0;
+  width: 100%; }
   .header .header-right {
     display: flex;
     justify-content: space-between;
@@ -19,10 +22,30 @@ body {
     .header .header-right .social-icon {
       display: flex;
       justify-content: space-around;
-      width: 90px; }
+      width: 90px;
+      font-size: 25px; }
   .header a {
     text-decoration: none;
-    padding: 10px; }
+    padding: 10px;
+    color: #7A7BA6; }
+
+.text {
+  color: white;
+  text-align: center; }
+  .text .main-title {
+    font-size: 7vw; }
+  .text .sub-title {
+    text-transform: uppercase;
+    font-size: 1.7vw;
+    letter-spacing: 0.2em; }
+  .text button {
+    height: 45px;
+    width: 150px;
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    margin-top: 10px;
+    font-size: 12px; }
 
 .pageOne {
   height: 100vh;
@@ -35,10 +58,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
-  .pageOne .main-title {
-    color: white;
-    font-size: 7vw;
-    text-align: center; }
 
 .pageTwo {
   height: 900px;
