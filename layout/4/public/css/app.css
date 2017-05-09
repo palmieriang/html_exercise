@@ -33,8 +33,8 @@ body {
   color: white;
   text-align: center; }
   .text .main-title {
-    font-size: 7vw; }
-  .text .sub-title {
+    font-size: 5.4vw; }
+  .text h2.sub-title {
     text-transform: uppercase;
     font-size: 1.7vw;
     letter-spacing: 0.2em; }
@@ -47,6 +47,11 @@ body {
     margin-top: 10px;
     font-size: 12px; }
 
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .pageOne {
   height: 100vh;
   background-image: url(https://static.wixstatic.com/media/84770f_baaa1e587d314769b1581cc2e0932b53.jpg/v1/fill/w_1079,h_1093,al_c,q_85/84770f_baaa1e587d314769b1581cc2e0932b53.webp);
@@ -54,14 +59,17 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  background-size: cover; }
 
 .pageTwo {
-  height: 900px;
+  height: 720px;
   background-color: #4a4c67; }
+  .pageTwo .text {
+    width: 50%; }
+    .pageTwo .text .title {
+      text-transform: uppercase; }
+    .pageTwo .text p {
+      font-size: 20px; }
 
 .pageThree {
   height: 100vh;
