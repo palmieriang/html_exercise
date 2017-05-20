@@ -3,7 +3,11 @@ body {
 	padding: 0;
 	font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
+}
+
+p {
+	line-height: 1.8em;
 }
 
 .header {
@@ -14,7 +18,7 @@ body {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	font-size: 18px;
+	font-size: 14px;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -72,14 +76,42 @@ body {
 }
 
 .pageOne {
-
 	height: 100vh;
-	background-image: url(https://static.wixstatic.com/media/84770f_baaa1e587d314769b1581cc2e0932b53.jpg/v1/fill/w_1079,h_1093,al_c,q_85/84770f_baaa1e587d314769b1581cc2e0932b53.webp);
+	background-image: url(https://static.wixstatic.com/media/84770f_baaa1e587d314769b1581cc2e0932b53.jpg/v1/fill/w_1266,h_993,al_c,q_85,usm_0.66_1.00_0.01/84770f_baaa1e587d314769b1581cc2e0932b53.webp);
+	// background-image: url(https://static.wixstatic.com/media/84770f_baaa1e587d314769b1581cc2e0932b53.jpg/v1/fill/w_1079,h_1093,al_c,q_85/84770f_baaa1e587d314769b1581cc2e0932b53.webp);
 	background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.title-box {
+	position: relative;
+	margin: 60px auto;
+
+	h1 {
+		letter-spacing: 0.2em;
+	}
+
+	span {
+		font-size: 50px;
+		position: absolute;
+		text-transform: inherit;
+		color: aquamarine;
+		-ms-transform: rotate(18deg); /* IE 9 */
+		-webkit-transform: rotate(18deg); /* Chrome, Safari, Opera */
+		transform: rotate(18deg);
+	}
+
+	.line1 {
+		top: -47px;
+		left: 341px;
+	}
+	.line2 {
+		top: 45px;
+		left: 288px;
+	}
+
 }
 
 .pageTwo {
@@ -99,7 +131,8 @@ body {
 			font-size: 25px;
 		}
 		p {
-			font-size: 18px;
+			font-size: 15px;
+			letter-spacing: 0.1em;
 		}	
 	}
 }
