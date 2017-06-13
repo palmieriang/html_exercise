@@ -12,7 +12,7 @@
 
 //2nd way
 
-var myApp = angular.module("myModule", []);
+var myApp = angular.module("myModule", ['ngAnimate']);
 
 myApp.controller("myController1", function($scope) {
 	$scope.message = "AngularJS Tutorial";
@@ -508,6 +508,9 @@ myApp.directive('myDirective4', function() {
 	}
 });
 
+myApp.controller('myController34', function($scope) {
+	$scope.foods = ['Pizza', 'Burger', 'Pasta', 'Potaoe'];
+});
 
 
 
