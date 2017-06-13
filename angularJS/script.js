@@ -444,5 +444,16 @@ myApp.filter('base', function() {
 	return something;
 });
 
+myApp.controller('myController32', function() {
+
+});
+
+myApp.directive('myDirective', function() {
+	return {
+		template: 'Hello World!'
+	};
+});
+
+
 
 
