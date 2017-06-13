@@ -721,7 +721,20 @@
 		<div class="example">
 			<p>Custom Directives</p>
 			<div ng-controller="myController32">
-			<div my-directive></div>
+				<my-directive1></my-directive1>
+				<div my-directive2></div>
+				<div my-directive3></div>
+				<div my-directive3></div>
+				<div my-directive3></div>
+			</div>
+		</div>
+		<div class="example">
+			<p>Custom Directives</p>
+			<div ng-controller="myController33">
+				<span>First variable 'name': {{name}}</span><br />
+				<span>Second variable 'age': {{age}}</span><br />
+				<span><input type="button" value="Alert From Controller" ng-click="alertTheName()"></span><br />
+				<div my-directive4 name="{{name}}" age="age" func="alertTheName()"></div>
 			</div>
 		</div>
 

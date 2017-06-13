@@ -1,21 +1,29 @@
 .example {
 	margin: 30px 30px;
 }
+
+.example p {
+	font-weight: bold;
+}
+
 table {
 	border-collapse: collapse;
 	font-family: Arial, sans-serif;
 	margin-top: 10px;
 }
+
 td {
 	border: 1px solid black;
 	padding: 5px;
 }
+
 th {
 	border: 1px solid black;
 	padding: 5px;
 	text-align: left;
 	cursor: pointer;
 }
+
 .arrow-up {
 	width: 0;
 	height: 0;
@@ -24,6 +32,7 @@ th {
 	border-bottom: 10px solid black;
 	display: inline-block;
 }
+
 .arrow-down {
 	width: 0;
 	height: 0;
@@ -32,6 +41,7 @@ th {
 	border-bottom: 10px solid black;
 	display: inline-block;
 }
+
 .table-lesson22 {
 	display: block;
 	font-size: xx-large;

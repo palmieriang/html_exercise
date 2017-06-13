@@ -444,15 +444,72 @@ myApp.filter('base', function() {
 	return something;
 });
 
-myApp.controller('myController32', function() {
-
+myApp.controller('myController32', function($scope) {
+	$scope.controllerProperty = "New text";
 });
 
-myApp.directive('myDirective', function() {
+myApp.directive('myDirective1', function() {
 	return {
 		template: 'Hello World!'
 	};
 });
+
+myApp.directive('myDirective2', function() {
+	function linkFunction(scope, elem, attrs) {
+		elem.bind('click', function() {
+			console.log(elem[0].innerHTML);
+		})
+	}
+	return {
+		template: 'Hello World!',
+		restrict: 'EA',
+		link: linkFunction
+	};
+});
+
+myApp.directive('myDirective3', function() {
+	function linkFunction($scope, elem, attrs) {
+		$scope.name = "Hello World!";
+		$scope.changeName = function(newName) {
+			$scope.name = $scope.controllerProperty;
+		}
+	}
+	return {
+		restrict: 'EA',
+		scope: true,
+		link: linkFunction,
+		template: '<span ng-click="changeName()">Current text: {{name}}</span>'
+	}
+});
+
+myApp.controller('myController33', function($scope) {
+	$scope.name = "Test";
+	$scope.age = 100;
+	$scope.alertTheName = function() {
+		alert($scope.name);
+	}
+});
+
+myApp.directive('myDirective4', function() {
+	return {
+		restrict: 'EA',
+		scope: {
+			name:'@',
+			age: '=',
+			func: '&'
+		},
+		template: [
+			'<span>Value of name in directive: {{name}} </span><br />',
+			'<span>Enter new "name": <input type="text" ng-model="name"></span><br />',
+			'<span>Value of age in directive: {{age}}</span><br />',
+			'<span>Enter new "age": <input type="text" ng-model="age"></span><br />',
+			'<span><input type="button" value="Alert from Directive" ng-click="func()"></span><br />'
+		].join('')
+	}
+});
+
+
+
 
 
 
