@@ -708,7 +708,14 @@
 <!-- Ui router multiple named views -->
 
 <!-- Lesson 53 -->
-<!-- Difference between ngroute and ui router -->
+		<div class="example">
+			<p>Custom Filter</p>
+			<div ng-controller="myController31">
+				Number: <input type="text" ng-model="number"><br /><br />
+				Base: <input type="text" ng-model="baseNumber"><br /><br />
+				Your number {{number}} in base {{baseNumber}} is {{number | base:baseNumber}}
+			</div>
+		</div>
 
 	</div>
 </body>
