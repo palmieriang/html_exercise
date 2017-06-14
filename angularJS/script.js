@@ -512,6 +512,14 @@ myApp.controller('myController34', function($scope) {
 	$scope.foods = ['Pizza', 'Burger', 'Pasta', 'Potaoe'];
 });
 
+/*// Inject 'ngCookies' in the module
+myApp.controller('myController35', ['$scope', '$cookies', function($scope, $cookies) {
+	$scope.myCookieVal = $cookies.get('cookie');
+	$scope.setCookie = function(val) {
+		$cookies.put('cookie', val);
+	}
+}]);*/
+
 
 
 
