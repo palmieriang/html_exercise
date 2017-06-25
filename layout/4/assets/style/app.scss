@@ -106,15 +106,21 @@ p {
         transform: rotate(18deg);
     }
 
-    .line1 {
-        top: -47px;
-        left: 339px;
-    }
-    .line2 {
-        top: 48px;
-        left: 285px;
-    }
+    .line {
+        position: absolute;
+        width: 100px;
+        left: 30%;
 
+        .line1 {
+            position: absolute;
+            top: -120px;
+            left: 105px;
+        }
+        .line2 {
+            position: absolute;
+            top: -20px;
+        }
+    }
 }
 
 .page .text {
@@ -154,8 +160,9 @@ p {
 .page .profile-image-1 {
     background-image: url(https://static.wixstatic.com/media/45d10e_a589f71f9e724a38a2d992fc85bc88fa.jpg/v1/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01/45d10e_a589f71f9e724a38a2d992fc85bc88fa.webp);
     height: 253px;
-    width: 253px;
-    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .page .profile-image-1:hover {
@@ -165,8 +172,9 @@ p {
 .page .profile-image-2 {
     background-image: url(https://static.wixstatic.com/media/45d10e_813f37ab2f0f4d26b09d49f8168e909f.jpg/v1/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01/45d10e_813f37ab2f0f4d26b09d49f8168e909f.webp);
     height: 253px;
-    width: 253px;
-    float: right;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .page .profile-image-2:hover {
