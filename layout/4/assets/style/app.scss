@@ -78,11 +78,10 @@ p {
 }
 
 .pageOne {
-    height: 200vh;
+    height: 1000px;
     background-image: url(https://static.wixstatic.com/media/84770f_baaa1e587d314769b1581cc2e0932b53.jpg/v1/fill/w_1266,h_993,al_c,q_85,usm_0.66_1.00_0.01/84770f_baaa1e587d314769b1581cc2e0932b53.webp);
     // background-image: url(https://static.wixstatic.com/media/84770f_baaa1e587d314769b1581cc2e0932b53.jpg/v1/fill/w_1079,h_1093,al_c,q_85/84770f_baaa1e587d314769b1581cc2e0932b53.webp);
     background-size: cover;
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -90,9 +89,13 @@ p {
 .title-box {
     position: relative;
     margin: 100px auto;
+    width: 200px;
+    top: -60px;
 
     h1 {
         letter-spacing: 0.2em;
+        position: absolute;
+        top: -80px;
     }
 
     span {
@@ -106,20 +109,16 @@ p {
         transform: rotate(18deg);
     }
 
-    .line {
+    .line1 {
         position: absolute;
-        width: 100px;
-        left: 30%;
+        top: -120px;
+        left: 105px;
+    }
 
-        .line1 {
-            position: absolute;
-            top: -120px;
-            left: 105px;
-        }
-        .line2 {
-            position: absolute;
-            top: -20px;
-        }
+    .line2 {
+        position: absolute;
+        top: -10px;
+        left: 30px;
     }
 }
 
@@ -148,13 +147,25 @@ p {
 
 .pageThree {
 
-    height: 250vh;
     background-image: url(https://static.wixstatic.com/media/84770f_18e11deb78074e3eb69e0aeb1245c45a.jpg/v1/fill/w_1386,h_1434,al_c,q_90/84770f_18e11deb78074e3eb69e0aeb1245c45a.webp);
     background-size: cover;
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 100px 0;
+
+    .title-box {
+        width: 450px;
+    }
+    .text {
+        width: 70%;
+    }
+}
+
+.pageFour {
+
+    height: 620px;
+    background-color: #4a4c67;
 }
 
 .page .profile-image-1 {
@@ -162,7 +173,6 @@ p {
     height: 253px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .page .profile-image-1:hover {
@@ -174,7 +184,6 @@ p {
     height: 253px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .page .profile-image-2:hover {

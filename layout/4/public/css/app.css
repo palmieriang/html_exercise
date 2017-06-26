@@ -59,18 +59,21 @@ p {
   align-items: center; }
 
 .pageOne {
-  height: 200vh;
+  height: 1000px;
   background-image: url(https://static.wixstatic.com/media/84770f_baaa1e587d314769b1581cc2e0932b53.jpg/v1/fill/w_1266,h_993,al_c,q_85,usm_0.66_1.00_0.01/84770f_baaa1e587d314769b1581cc2e0932b53.webp);
   background-size: cover;
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat; }
 
 .title-box {
   position: relative;
-  margin: 100px auto; }
+  margin: 100px auto;
+  width: 200px;
+  top: -60px; }
   .title-box h1 {
-    letter-spacing: 0.2em; }
+    letter-spacing: 0.2em;
+    position: absolute;
+    top: -80px; }
   .title-box span {
     font-size: 50px;
     font-weight: 600;
@@ -82,17 +85,14 @@ p {
     -webkit-transform: rotate(18deg);
     /* Chrome, Safari, Opera */
     transform: rotate(18deg); }
-  .title-box .line {
+  .title-box .line1 {
     position: absolute;
-    width: 100px;
-    left: 30%; }
-    .title-box .line .line1 {
-      position: absolute;
-      top: -120px;
-      left: 105px; }
-    .title-box .line .line2 {
-      position: absolute;
-      top: -20px; }
+    top: -120px;
+    left: 105px; }
+  .title-box .line2 {
+    position: absolute;
+    top: -10px;
+    left: 30px; }
 
 .page .text {
   width: 55%; }
@@ -110,20 +110,26 @@ p {
   background-color: #4a4c67; }
 
 .pageThree {
-  height: 250vh;
   background-image: url(https://static.wixstatic.com/media/84770f_18e11deb78074e3eb69e0aeb1245c45a.jpg/v1/fill/w_1386,h_1434,al_c,q_90/84770f_18e11deb78074e3eb69e0aeb1245c45a.webp);
   background-size: cover;
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  padding: 100px 0; }
+  .pageThree .title-box {
+    width: 450px; }
+  .pageThree .text {
+    width: 70%; }
+
+.pageFour {
+  height: 620px;
+  background-color: #4a4c67; }
 
 .page .profile-image-1 {
   background-image: url(https://static.wixstatic.com/media/45d10e_a589f71f9e724a38a2d992fc85bc88fa.jpg/v1/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01/45d10e_a589f71f9e724a38a2d992fc85bc88fa.webp);
   height: 253px;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-repeat: no-repeat; }
 
 .page .profile-image-1:hover {
   background-image: url(https://static.wixstatic.com/media/45d10e_1c5842b322b348378d1f8048e5fb06a8.jpg/v1/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01/45d10e_1c5842b322b348378d1f8048e5fb06a8.webp); }
@@ -132,8 +138,7 @@ p {
   background-image: url(https://static.wixstatic.com/media/45d10e_813f37ab2f0f4d26b09d49f8168e909f.jpg/v1/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01/45d10e_813f37ab2f0f4d26b09d49f8168e909f.webp);
   height: 253px;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-repeat: no-repeat; }
 
 .page .profile-image-2:hover {
   background-image: url(https://static.wixstatic.com/media/45d10e_17940a09a6984f5f948f4afc5fc3dc3a.jpg/v1/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01/45d10e_17940a09a6984f5f948f4afc5fc3dc3a.webp); }
