@@ -164,8 +164,17 @@ p {
 
 .pageFour {
 
-    height: 620px;
-    background-color: #4a4c67;
+    height: 400px;
+    background-color: #fcf390;
+
+    .text {
+        width: 100%;
+    }
+
+    h1 {
+        color: #4A4C67;
+        font-weight: 600;
+    }
 }
 
 .page .profile-image-1 {
